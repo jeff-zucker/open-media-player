@@ -441,16 +441,18 @@ ia-player {
   gap: 6px;
 }
 .ia-volume {
-  width: 80px;
+  width: 160px;
   cursor: pointer;
 }
 
 /* --- Artist search ----------------------------------------------- */
 
-.ia-artist-search { display: inline-flex; margin-left: auto; }
+/* Flexes 1:1 with .ia-seek-wrap, so the free toolbar space splits evenly
+   between the seek bar and this search box. */
+.ia-artist-search { display: inline-flex; margin-left: auto; flex: 1; min-width: 0; }
 .ia-artist-search-input {
-  width: 320px;
-  max-width: 40vw;
+  width: 100%;
+  min-width: 160px;
   padding: 4px 8px;
   font: inherit;
   color: var(--ia-text);

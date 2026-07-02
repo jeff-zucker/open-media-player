@@ -17,7 +17,7 @@ The artists list is separated into curated at the top and raw at the bottom. Raw
   * select the three dots to the right of an artist or track
   * select "visit on archive.org"
 ### Search for artists
-  * use the "find an artist" input in the upper right
+  * use the "Search the Internet Archive" input in the upper right
   * results (if any) will be shown in the album column, click on one to see tracks
 ### Create a playlist
   * select "+ playlist" at the bottom left

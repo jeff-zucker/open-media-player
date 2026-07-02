@@ -16,7 +16,7 @@ export function createPlayerUI({ mediaType = 'audio', panel = false } = {}) {
   const L = isVideo
     ? { genre: 'Film Types', artist: 'Collections', album: 'Movies', find: 'Find a film…',
         addGenre: '+ Add film type', addArtist: '+ Add collection' }
-    : { genre: 'Genres', artist: 'Artists', album: 'Albums', find: 'Find artist…',
+    : { genre: 'Genres', artist: 'Artists', album: 'Albums', find: 'Search the Internet Archive…',
         addGenre: '+ Add genre', addArtist: '+ Add artist' };
   const container = document.createElement('div');
   container.className = 'ia-player-app' + (isVideo ? ' media-video' : ' media-audio');

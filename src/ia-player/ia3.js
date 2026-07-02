@@ -255,7 +255,7 @@ function createPlayer({ libraryConfigs, libs, host }) {
       : { genre: 'Genres', artist: 'Artists', album: 'Albums',
           addGenre: '+ Add genre', addArtist: '+ Add artist',
           allGenre: '(All genres)', allArtist: '(All artists)', allAlbum: '(All albums)',
-          find: 'Find artist…',
+          find: 'Search the Internet Archive…',
           chooseArtist: 'Choose an artist to see albums.',
           loadingAlbums: 'Loading albums…', noAlbums: 'No albums found.' };
   }
