@@ -1,0 +1,66 @@
+@prefix : <#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix ui: <http://www.w3.org/ns/ui#>.
+
+:Tabs
+    a ui:Menu;
+    ui:label "Open Media Player";
+    ui:orientation ui:Horizontal;
+    ui:parts ( :Music :Spoken-Word :Movies :Images ).
+
+:Music
+    a ui:Component;
+    ui:label "Music (Internet Archive)";
+    ui:icon "🎵";
+    ui:name "ia-player";
+    rdfs:comment "Browse and play music collections from the Internet Archive.";
+    dct:creator "Jeff Zucker";
+    dct:subject "Media";
+    ui:attribute
+        [ schema:name "id"; schema:value "panel-music" ],
+        [ schema:name "storage-ns"; schema:value "music" ],
+        [ schema:name "defer"; schema:value "" ],
+        [ schema:name "source"; schema:value "./libraries/internet_archive_music/index.ttl" ].
+
+:Spoken-Word
+    a ui:Component;
+    ui:label "Spoken Word (Internet Archive)";
+    ui:icon "🎙️";
+    ui:name "ia-player";
+    rdfs:comment "Browse and play poetry, audiobooks, and talks from the Internet Archive.";
+    dct:creator "Jeff Zucker";
+    dct:subject "Media";
+    ui:attribute
+        [ schema:name "id"; schema:value "panel-spoken-word" ],
+        [ schema:name "storage-ns"; schema:value "spoken-word" ],
+        [ schema:name "defer"; schema:value "" ],
+        [ schema:name "source"; schema:value "./libraries/internet_archive_spoken_word/index.ttl" ].
+
+:Movies
+    a ui:Component;
+    ui:label "Movies (Internet Archive)";
+    ui:icon "🎬";
+    ui:name "ia-player";
+    rdfs:comment "Browse and play films from the Internet Archive.";
+    dct:creator "Jeff Zucker";
+    dct:subject "Media";
+    ui:attribute
+        [ schema:name "id"; schema:value "panel-movies" ],
+        [ schema:name "storage-ns"; schema:value "movies" ],
+        [ schema:name "favourites-only"; schema:value "" ],
+        [ schema:name "defer"; schema:value "" ],
+        [ schema:name "source"; schema:value "./libraries/internet_archive_movies/index.ttl" ].
+
+:Images
+    a ui:Component;
+    ui:label "Images (Wikimedia)";
+    ui:icon "🖼";
+    ui:name "omp-images";
+    rdfs:comment "Browse Wikimedia image galleries.";
+    dct:creator "Jeff Zucker";
+    dct:subject "Media";
+    ui:attribute
+        [ schema:name "id"; schema:value "panel-images" ],
+        [ schema:name "source"; schema:value "./libraries/wikimedia_images/images.ttl#Images" ].

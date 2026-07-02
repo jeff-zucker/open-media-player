@@ -1,0 +1,36 @@
+{
+  "@context": "https://jeff-zucker.github.io/component-interop/context.jsonld",
+  "@id": "",
+  "@type": "Manifest",
+  "name": "open-media-player",
+  "objects": {
+    "provides": {
+      "webid": { "respondTo": "sol-login", "sendValue": "detail.webId" }
+    }
+  },
+  "components": {
+    "ia-player": {
+      "label": "Internet Archive player",
+      "shape": "./shapes/music.shacl",
+      "help": "./src/ia-player/assets/ia-help.html"
+    },
+    "omp-images": {
+      "label": "Wikimedia images",
+      "shape": "./shapes/image-libraries.shacl"
+    }
+  },
+  "stages": {
+    "local": {
+      "components": {
+        "ia-player": "./dist/ia-player.esm.js"
+      },
+      "shared-modules": {}
+    },
+    "cdn": {
+      "components": {
+        "ia-player": "https://cdn.jsdelivr.net/npm/open-media-player@0/dist/ia-player.esm.js"
+      },
+      "shared-modules": {}
+    }
+  }
+}

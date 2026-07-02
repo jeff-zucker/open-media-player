@@ -1,0 +1,47 @@
+{
+  "name": "open-media-player",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Open Media Player — <ia-player> and <omp-images> web components with curated Internet Archive and Wikimedia libraries. Solid-aware; reading works logged out.",
+  "author": "Jeff Zucker",
+  "license": "MIT",
+  "homepage": "https://jeff-zucker.github.io/open-media-player/",
+  "repository": "github:jeff-zucker/open-media-player",
+  "exports": {
+    ".": "./dist/ia-player.esm.js",
+    "./manifest": "./omp.manifest.json",
+    "./omp.manifest.json": "./omp.manifest.json",
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*",
+    "./libraries/*": "./libraries/*",
+    "./shapes/*": "./shapes/*",
+    "./ui-data/*": "./ui-data/*"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "libraries/",
+    "shapes/",
+    "ui-data/",
+    "demo/",
+    "omp.manifest.json",
+    "index.html"
+  ],
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "test": "node --test tests/*.test.mjs",
+    "smoke": "node tests/sources-smoke.mjs",
+    "serve": "node tools/serve-static.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "peerDependencies": {
+    "rdflib": "^2.2.0",
+    "sol-components": "^2.4.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.5",
+    "n3": "^1.26.0",
+    "rdf-validate-shacl": "^0.6.5"
+  }
+}

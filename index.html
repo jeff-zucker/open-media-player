@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Open Media Player</title>
+
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sol-components@2/web/styles/root.css">
+  <link rel="stylesheet" href="demo/omp-page.css">
+
+  <!-- component-interop (parser-blocking <head> script) reads both manifests —
+       sol-components' first (it owns the shared specifiers: rdflib,
+       solid-logic, solid-ui, …; merge is first-wins), omp's second (adds the
+       ia-player bundle, which also defines <omp-images>) — injects the
+       stage-selected importmap, then import()s each data-components entry.
+       data-stage="local": with the sol-components manifest loaded from
+       jsDelivr, its "local" stage resolves relative to the manifest URL —
+       i.e. jsDelivr's verbatim files and vendored rdflib, the same dependency
+       graph data-kitchen ships. omp's own manifest is page-relative, so its
+       local stage serves ./dist/ia-player.esm.js from this origin (the
+       committed build on GitHub Pages, the fresh build in dev). -->
+  <script src="https://cdn.jsdelivr.net/npm/component-interop@0.3/component-interop.js"
+          data-stage="local"
+          data-manifest="https://cdn.jsdelivr.net/npm/sol-components@2/dist/sol-components.manifest.json omp.manifest.json"
+          data-components="sol-basic sol-gallery sol-login menu-from-rdf ia-player"
+          data-objects="webid:open-media-player auth:sol-components"
+  ></script>
+
+  <!-- sol-login reads the Inrupt auth library from a window global; this
+       module publishes sol-components' vendored ESM build onto it. -->
+  <script type="module" src="demo/inrupt-global.js"></script>
+</head>
+<body>
+
+  <!-- The shared-defaults singleton: its VALUES (color scheme, text size,
+       login issuers) come from the `source` RDF. No proxy is configured —
+       archive.org and commons.wikimedia.org are CORS-open — and there is no
+       solid-kitchen dev-write flag on this public page, so all owner/edit
+       affordances stay hidden (guest mode). -->
+  <sol-default
+      label="Preferences"
+      shape="https://cdn.jsdelivr.net/npm/sol-components@2/shapes/data-kitchen-settings.shacl"
+      source="ui-data/omp-settings.ttl#Settings"
+  ></sol-default>
+
+  <nav class="omp-chrome-bar" aria-label="Controls">
+    <sol-login></sol-login>
+    <sol-include source="src/ia-player/assets/mini-player.html" trusted></sol-include>
+  </nav>
+
+  <main class="omp-panels">
+    <!-- The tabset renders from the RDF shell model: tabs are the ui:parts
+         of ui-data/omp-tabs.ttl#Tabs (via the menu-from-rdf add-on in the
+         loader list above). -->
+    <sol-tabs keep-alive from-rdf="ui-data/omp-tabs.ttl#Tabs"></sol-tabs>
+  </main>
+
+  <script type="module" src="demo/mini-player.js"></script>
+</body>
+</html>
