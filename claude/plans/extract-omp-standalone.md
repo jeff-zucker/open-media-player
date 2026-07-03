@@ -1,12 +1,13 @@
 # Plan: Release open-media-player (omp) as a standalone npm package + read-only GitHub Pages app
 
-**STATUS (2026-07-03):** Phase 1 DONE (this repo, tests green, headless-verified).
-Phase 2 DONE locally ahead of the gates — dk consumes the package via its
-node_modules symlink (dk commit "Cutover: media tabs…"); live-pod index.html +
-dk.manifest.json hand-merged. Gates G1–G4 (GitHub repo, push, npm publish,
-Pages) still PENDING explicit owner go. Post-plan additions: audio toolbar
-resize + "Search the Internet Archive…" rename (both versions); web-only short
-tab labels.
+**STATUS (2026-07-03):** Phase 1 DONE. Phase 2 DONE locally (dk symlink cutover;
+live-pod index.html + dk.manifest.json hand-merged). G1 repo
+(github.com/jeff-zucker/open-media-player), G2 push, and G4 Pages
+(https://jeff-zucker.github.io/open-media-player/ — .ttl MIME + archive.org/Commons
+CORS verified live) DONE. G3 npm publish approved and ready (name available, pack
+reviewed) — blocked only on interactive `npm login`. Post-plan additions: audio
+toolbar resize + "Search the Internet Archive…" rename (both versions); web-only
+short tab labels.
 
 ## Context
 
