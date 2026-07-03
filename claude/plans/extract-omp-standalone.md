@@ -1,5 +1,13 @@
 # Plan: Release open-media-player (omp) as a standalone npm package + read-only GitHub Pages app
 
+**STATUS (2026-07-03):** Phase 1 DONE (this repo, tests green, headless-verified).
+Phase 2 DONE locally ahead of the gates — dk consumes the package via its
+node_modules symlink (dk commit "Cutover: media tabs…"); live-pod index.html +
+dk.manifest.json hand-merged. Gates G1–G4 (GitHub repo, push, npm publish,
+Pages) still PENDING explicit owner go. Post-plan additions: audio toolbar
+resize + "Search the Internet Archive…" rename (both versions); web-only short
+tab labels.
+
 ## Context
 
 The ia/wikidata media tabs in data-kitchen are already an internally-branded **omp** subsystem:
