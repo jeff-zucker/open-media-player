@@ -12,6 +12,8 @@
  * to text — so callers carry no sanitization burden.
  */
 
+import { OMP_USER_AGENT } from '../../shared/omp-user-agent.js';
+
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 
 /** Collapse an HTML fragment (extmetadata values are HTML) to plain text. */
@@ -74,7 +76,10 @@ export async function getCategoryImages(categoryUrl, opts = {}) {
   });
   if (cont) params.set('gcmcontinue', cont);
 
-  const resp = await fetch(`${COMMONS_API}?${params}`, { signal });
+  // Identify the app to Wikimedia. A JS `User-Agent` is dropped by the
+  // browser; `Api-User-Agent` is Wikimedia's sanctioned, CORS-allowed way.
+  const resp = await fetch(`${COMMONS_API}?${params}`,
+    { signal, headers: { 'Api-User-Agent': OMP_USER_AGENT } });
   if (!resp.ok) throw new Error(`HTTP ${resp.status} from Commons`);
   const data = await resp.json();
   if (data.error) throw new Error(data.error.info || 'Commons API error');

@@ -1,9 +1,11 @@
-<!-- Track editor modal (title / artist / album). ia-ui.js
-     showTrackEditModal() seeds the fields, appends the shared-album note to
-     the album label, and prepends any extra action buttons. -->
-<div class="about-modal-content" role="dialog" aria-modal="true" aria-labelledby="tk-modal-title">
+<!-- Track card. For playlist rows this is the ONE card holding every track
+     option — the editor form plus the favourite / visit / remove buttons that
+     showTrackEditModal() fills into .track-card-actions. Library rows use the
+     same card as a pure editor (empty actions row stays hidden). -->
+<div class="about-modal-content track-card" role="dialog" aria-modal="true" aria-labelledby="tk-modal-title">
   <button type="button" class="about-modal-close" aria-label="Close">×</button>
   <h2 id="tk-modal-title" class="about-modal-title">Edit track</h2>
+  <div class="filters-actions track-card-actions" hidden></div>
   <form class="filters-form">
     <label class="filters-row">
       <span class="filters-label">Title</span>
@@ -17,6 +19,7 @@
       <span class="filters-label filters-album-label">Album</span>
       <input type="text" name="album" autocomplete="off" placeholder="(optional)">
     </label>
+    <p class="filters-hint track-album-note" hidden></p>
     <div class="filters-actions">
       <span style="flex:1"></span>
       <button type="button" class="filters-cancel">Cancel</button>

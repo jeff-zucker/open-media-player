@@ -23,8 +23,10 @@ import {
   convertPlaylistToArtist, unlinkPlaylistArtist, setPlaylistHidden,
   getLocalArtistAlbums, getLocalReleaseTracks,
   updateTrackMeta, releaseSiblingCount,
+  trackNodeForItemUrl,
   setSolidWriteAuthed
 } from "./ia-rdf.js";
+import { sym } from "../shared/rdf-shared.js";
 import {
   createPlayerUI,
   createListbox,
@@ -70,6 +72,14 @@ function playableUrl(url) {
   return (typeof url === 'string' && url.startsWith('file:'))
     ? 'dkfile:' + url.slice('file:'.length) : url;
 }
+
+// Local media import PARKED (2026-07-04). Flip to false to restore, and
+// uncomment the two controls in assets/ia-player-shell.html (the gear
+// "Import music folder…" item and the "+ Library" button). While parked,
+// imported libraries recorded in libraries/imported.ttl (e.g. My Music)
+// are not listed at boot; the pod data and the Electron import backend
+// (import-music.mjs, dkfile:, import-id3-build.js) stay intact.
+const LOCAL_MEDIA_IMPORT_PARKED = true;
 
 function createPlayer({ libraryConfigs, libs, host }) {
   // Active media type = the (single) enabled library's declared type.
@@ -534,6 +544,7 @@ function createPlayer({ libraryConfigs, libs, host }) {
         id: t.id, url: t.url, name: t.name,
         artist: t.artist || '', album: t.album || '',
         albumUrl: t.albumUrl || '', time: t.time || '',
+        node: t.node?.value || null,   // URI only — re-symmed on restore
         _lib: t._lib
       })),
       currentTrackUrl: currentTrack?.url || null,
@@ -545,6 +556,7 @@ function createPlayer({ libraryConfigs, libs, host }) {
         id: currentTrack.id, url: currentTrack.url, name: currentTrack.name,
         artist: currentTrack.artist || '', album: currentTrack.album || '',
         albumUrl: currentTrack.albumUrl || '', time: currentTrack.time || '',
+        node: currentTrack.node?.value || null,
         _lib: currentTrack._lib
       } : null,
       // Save playback position so reopening the page can seek back to where
@@ -605,7 +617,7 @@ function createPlayer({ libraryConfigs, libs, host }) {
       const enabledLibIds = new Set(libraryConfigs.filter(c => c.enabled).map(c => c.id));
       if (Array.isArray(s.libraryTracks) && s.libraryTracks.length) {
         libraryTracks = s.libraryTracks
-          .map(t => ({ ...t }))
+          .map(t => ({ ...t, node: t.node ? sym(t.node) : null }))
           .filter(t => !t._lib || enabledLibIds.has(t._lib));
       }
 
@@ -649,6 +661,20 @@ function createPlayer({ libraryConfigs, libs, host }) {
         }
       }
 
+      // Re-link node-less restored rows (snapshots from before nodes were
+      // persisted) to their RDF Tracks by mo:item URL — the album fetch
+      // above has loaded the restored artist's release docs by now. Without
+      // a node a converted-artist row renders as a bare-☆ live row.
+      let relinked = false;
+      for (const t of libraryTracks) {
+        if (t.node) continue;
+        for (const lib of enabledLibs()) {
+          const n = lib.store && trackNodeForItemUrl(lib.store, t.url);
+          if (n) { t.node = n; relinked = true; break; }
+        }
+      }
+      if (relinked && currentSource === 'library') renderTracks();
+
       // Restore the "now playing" track marker and queue audio so Play
       // resumes from the saved position instead of starting from 0. Audio
       // isn't auto-played — browsers block autoplay without recent user
@@ -660,7 +686,9 @@ function createPlayer({ libraryConfigs, libs, host }) {
         const live = libraryTracks.find(x => x.url === s.currentTrackUrl) ||
                      currentTracks.find(x => x.url === s.currentTrackUrl);
         const fromSnapshot = !live && s.currentTrack && s.currentTrack.url === s.currentTrackUrl;
-        const t = live || (fromSnapshot ? s.currentTrack : null);
+        const t = live || (fromSnapshot
+          ? { ...s.currentTrack, node: s.currentTrack.node ? sym(s.currentTrack.node) : null }
+          : null);
         if (t && (fromSnapshot || !t._lib || enabledLibIds.has(t._lib))) {
           currentTrack = t;
           // Keep the <video> reveal (Req 4) consistent with the restored
@@ -1778,7 +1806,9 @@ function createPlayer({ libraryConfigs, libs, host }) {
 
   // ---- bottom buttons -------------------------------------------------
 
-  addSourceBtn.addEventListener('click', async () => {
+  // Null-safe: the "+ Library" button is commented out of the shell markup
+  // while local media import is parked (LOCAL_MEDIA_IMPORT_PARKED).
+  addSourceBtn?.addEventListener('click', async () => {
     const choice = prompt(
       'Add a library:\n\n  1 = create a new empty library\n  2 = add an existing one by URL',
       '1');
@@ -2195,6 +2225,16 @@ function createPlayer({ libraryConfigs, libs, host }) {
         // a no-playlist catalogue artist (e.g. Wu-Tang) needs the whole
         // releases set (foaf:maker scan), so load all release docs.
         const p = (async () => {
+          // The source playlist doc may not be in the store yet — the
+          // two-phase boot defers playlist files to an idle background
+          // load, and this can run first (early click, or a restored
+          // artist at boot). Without it releaseDocsForPlaylistDocs sees
+          // nothing and an EMPTY album list gets cached for the session.
+          // loadDocs is idempotent, so after the background load this is
+          // free.
+          if (artist.sourcePlaylist && lib.loadDocs) {
+            await lib.loadDocs([String(artist.sourcePlaylist).split('#')[0]]);
+          }
           const need = artist.sourcePlaylist
             ? releaseDocsForPlaylistDocs(lib.store, [String(artist.sourcePlaylist).split('#')[0]])
             : allReleaseDocs(lib.store, lib.baseURI);
@@ -2402,7 +2442,9 @@ function createPlayer({ libraryConfigs, libs, host }) {
     const existingIds = new Set(libraryTracks.map(t => t.id));
     const toAdd = lists.flat().filter(t => !existingIds.has(t.id));
     if (toAdd.length) {
-      libraryTracks = libraryTracks.concat(toAdd);
+      // Newest additions go on TOP of the queue — the user just asked for
+      // them, so they shouldn't land below a long existing list.
+      libraryTracks = toAdd.concat(libraryTracks);
       markDirty();
     }
     currentTracks = libraryTracks;
@@ -2580,10 +2622,15 @@ function createPlayer({ libraryConfigs, libs, host }) {
     // never playlist tracks, so they carry no kebab.
     const favView = currentSource === 'favorites';
     const owner = isEffectivelyLoggedIn();
+    const inPlaylist = currentSource && playlistIds.has(currentSource);
     renderTrackList(trackBody, trackEmpty, currentTracks, {
       currentTrackId: currentTrack?.id,
       isFav: (t) => isTrackFavorited(t.url),
-      favouritable: true,                 // every track shows a ☆
+      // RDF-backed rows (playlist rows AND a converted-playlist artist's
+      // tracks in the library view) carry their ☆ on the track card behind
+      // the ⋯; only live rows (no node — raw IA results) keep the inline
+      // one-click star.
+      favouritable: (t) => !t.node,
       wallDelete: favView && owner,       // owner moderation replaces ☆ with ✕
       emptyMessage: trackEmptyMsg,
       useKebab: (t) => {
@@ -3247,6 +3294,13 @@ function createPlayer({ libraryConfigs, libs, host }) {
     const isIa = /(?:^|\/\/)(?:www\.)?archive\.org\//.test(albumUrl);
     const inPlaylist = currentSource && playlistIds.has(currentSource);
 
+    // Editable RDF-backed rows (playlist rows AND a converted-playlist
+    // artist's tracks in the library view): every option lives on ONE card —
+    // the editor form plus favourite / visit / remove buttons
+    // (openTrackEditPane builds them all). The floating menu remains only for
+    // the guest edge where the row isn't editable (no form to hang the card on).
+    if (canEditTrack(row)) { openTrackEditPane(id); return; }
+
     const items = [];
     if (canEditTrack(row)) items.push({ id: 'edit',   label: 'Edit…' });
     if (isIa)              items.push({ id: 'visit',  label: 'Visit on the Internet Archive' });
@@ -3267,9 +3321,10 @@ function createPlayer({ libraryConfigs, libs, host }) {
     showFloatingMenu(anchor, items, pick);
   }
 
-  // The editor modal — just the title / artist / album form. Visit and
-  // Remove used to live as buttons inside this modal; they're now
-  // kebab-menu items above so the modal stays a pure editor.
+  // The track card — consolidates EVERY option for an RDF-backed row: the
+  // title / artist / album editor form plus favourite, visit-on-IA and
+  // remove action buttons. Reached from playlist rows and from a
+  // converted-playlist artist's tracks in the library view alike.
   async function openTrackEditPane(id) {
     const row = currentTracks.find(t => t.id === id);
     if (!row || !row.node) {
@@ -3280,10 +3335,32 @@ function createPlayer({ libraryConfigs, libs, host }) {
     if (!lib) return;
     const siblingCount = releaseSiblingCount(lib.store, row.node);
     const inPlaylist = currentSource && playlistIds.has(currentSource);
+    const albumUrl = row.albumUrl || '';
+    const isIa = /(?:^|\/\/)(?:www\.)?archive\.org\//.test(albumUrl);
+    // Same card everywhere an RDF-backed row opens it — playlist view and a
+    // converted-playlist artist's tracks alike. Only the remove semantics
+    // differ: playlist = drop the itemListElement pointer (persisted),
+    // library = drop from the ephemeral queue.
+    const actions = [
+      {
+        label: isTrackFavorited(row.url) ? '★ Remove from favourites' : '☆ Add to favourites',
+        onClick: () => favouriteTrackRow(row),
+      },
+    ];
+    if (isIa) actions.push({
+      label: 'Visit on the Internet Archive',
+      onClick: () => { window.open(albumUrl, '_blank', 'noopener'); },
+    });
+    actions.push({
+      label: inPlaylist ? 'Remove from playlist' : 'Remove from list',
+      danger: true,
+      onClick: () => removeTracksFromView([id], { fromButton: true }),
+    });
     showTrackEditModal({
+      title: 'Track options',
       values: { title: row.name, artist: row.artist, album: row.album },
       siblingCount,
-      actions: [],   // Visit / Remove moved to the kebab menu
+      actions,
       onSave: async ({ title, artist, album }) => {
         const res = await updateTrackMeta(lib.store, lib.baseURI, row.node, { title, artist, album });
         if (!checkSaved(res, `edit "${row.name}"`)) return;
@@ -4146,6 +4223,7 @@ function loadLibraryConfigs(defaultSrc) {
 // [] when the registry is absent/unreadable. `ref` is the default source URL, used
 // only to locate the libraries/ root.
 async function loadImportedLibraryConfigs(ref) {
+  if (LOCAL_MEDIA_IMPORT_PARKED) return [];
   const root = String(ref || '').match(/^(.*\/libraries\/)/)?.[1];
   if (!root) return [];
   let text;

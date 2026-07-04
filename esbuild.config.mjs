@@ -22,7 +22,10 @@ const options = {
   logLevel: 'info',
   external: ['rdflib'],
   loader: { '.css': 'text', '.html': 'text' },
-  define: { __OMP_BUILD__: JSON.stringify(`omp ${pkg.version} ${new Date().toISOString()}`) },
+  define: {
+    __OMP_BUILD__: JSON.stringify(`omp ${pkg.version} ${new Date().toISOString()}`),
+    __OMP_VERSION__: JSON.stringify(pkg.version),
+  },
 };
 
 if (watch) {

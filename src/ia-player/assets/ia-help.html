@@ -5,7 +5,7 @@
 <title>Open Media Player — Help</title>
 <style>
   body {
-    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     color: #1d1d1d;
     background: #fff;
     max-width: 900px;
@@ -43,10 +43,10 @@
     border-bottom-width: 2px;
     border-radius: 3px;
     padding: 1px 5px;
-    font: 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 16px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   code {
-    font: 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 16px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     background: #f5f5f5;
     padding: 1px 4px;
     border-radius: 3px;
@@ -130,7 +130,10 @@ need to recategorise.</p>
   <thead><tr><th>Action</th><th>How</th><th>Notes</th></tr></thead>
   <tbody>
     <tr><td>Enable / disable a library</td><td>Click its checkbox</td><td>Disabled libraries drop out of the aggregated genres / artists / playlists. (The checkbox is independent of the active-view highlight.)</td></tr>
+    <!-- Local media import parked (LOCAL_MEDIA_IMPORT_PARKED in ia3.js) — restore the "+ Library" wording:
     <tr><td>Add / edit a library</td><td><strong>+ Library</strong>; library row <strong>⋯</strong> → <em>Rename / Change library URL / Delete library</em></td><td>Delete only forgets the library in this player; its files stay where they are. The <strong>+ Library</strong> button is hidden in guest mode.</td></tr>
+    -->
+    <tr><td>Edit a library</td><td>Library row <strong>⋯</strong> → <em>Rename / Change library URL / Delete library</em></td><td>Delete only forgets the library in this player; its files stay where they are.</td></tr>
     <tr><td>Resize the Sources column</td><td>Drag its right edge</td><td>Width persisted.</td></tr>
     <tr><td>Switch to a playlist</td><td>Click the playlist row</td><td>Re-click (or click a genre/artist/album) returns to the Library view. A playlist shows as <code>Name (Maker)</code>; its description is the hover tooltip.</td></tr>
     <tr><td>Add a playlist</td><td><strong>+ Playlist</strong></td><td>Combined form: Name (required), Maker, Description.</td></tr>

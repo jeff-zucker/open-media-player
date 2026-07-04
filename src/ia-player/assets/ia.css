@@ -197,9 +197,20 @@ ia-player {
   background: var(--ia-bg-app);
   color: var(--ia-text);
   font-family: var(--ia-font-body);
-  font-size: 0.92rem;
+  font-size: max(16px, 0.92rem);
   /* Cross-fade theme + library switches. */
   transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Form controls don't inherit fonts by default — the UA gives an
+   unstyled <button>/<input> 13.33px, silently breaking the 16px floor
+   (buttons with no font rule of their own, e.g. the modal Cancel/Save).
+   Inherit everywhere in the player AND its body-appended surfaces
+   (modals, floating menus). :where() keeps this at zero-class
+   specificity: it beats only UA defaults, never a rule that declares
+   its own (floored) size — e.g. the 1.6rem modal ×. */
+:where(.ia-player-app, .about-modal, .ia-floating-menu) :where(button, input, select, textarea) {
+  font: inherit;
 }
 @media (prefers-reduced-motion: reduce) {
   .ia-player-app { transition: none; }
@@ -238,7 +249,7 @@ ia-player {
   border: 1px solid color-mix(in srgb, var(--ia-error, #ff5a4d) 70%, #000);
   background: var(--ia-error, #ff5a4d);
   color: #fff;
-  font-size: .96rem;
+  font-size: max(16px, .96rem);
   font-weight: 600;
   line-height: 1.35;
   box-shadow: 0 14px 40px -10px rgba(0, 0, 0, .6);
@@ -354,9 +365,9 @@ ia-player {
 .ia-film-intro-about { margin: 0 0 1.4rem; font-size: 1rem; color: #e6edf3; }
 .ia-film-intro-about:empty { display: none; }
 .ia-film-intro-about a { color: var(--ia-accent, #49c8d8); }
-.ia-film-intro-rights { margin: 0 0 1rem; font-size: .9rem; color: #aeb9c4; }
+.ia-film-intro-rights { margin: 0 0 1rem; font-size: max(16px, .9rem); color: #aeb9c4; }
 .ia-film-intro-rights:empty { display: none; }
-.ia-film-intro-hint { margin: 0; font-size: .92rem; font-style: italic; color: #aeb9c4; }
+.ia-film-intro-hint { margin: 0; font-size: max(16px, .92rem); font-style: italic; color: #aeb9c4; }
 .ia-nowplaying .ia-np-rights { color: #aeb9c4; }
 
 /* --- Toolbar ----------------------------------------------------- */
@@ -383,14 +394,14 @@ ia-player {
   border-radius: 4px;
   min-width: 44px;
   padding: 3px 6px;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   line-height: 1.1;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.ia-btn .ia-icon { font-size: 0.95rem; }
+.ia-btn .ia-icon { font-size: max(16px, 0.95rem); }
 .ia-btn .ia-blabel {
-  font-size: 0.65rem;
+  font-size: max(16px, 0.65rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--ia-text-disabled);
@@ -430,7 +441,7 @@ ia-player {
 .ia-time {
   color: var(--ia-text-dim);
   font-family: var(--ia-font-mono);
-  font-size: 0.8rem;
+  font-size: max(16px, 0.8rem);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -491,7 +502,7 @@ ia-player {
   border: none;
   color: var(--ia-text);
   padding: 8px 10px;
-  font-size: 0.9rem;
+  font-size: max(16px, 0.9rem);
   cursor: pointer;
   border-radius: 4px;
   height: auto;
@@ -580,7 +591,7 @@ ia-player {
   background: transparent;
   border: 1px solid transparent;
   color: var(--ia-text-dim);
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   line-height: 1;
   padding: 0 4px;
   border-radius: 4px;
@@ -636,13 +647,13 @@ ia-player {
 .ia-nowplaying .ia-artist-search { flex: 0 0 auto; margin-left: auto; }
 .ia-nowplaying .ia-artist-search-input {
   width: 240px; max-width: 32vw;
-  font-family: var(--ia-font-body); font-size: 0.85rem; font-weight: 400;
+  font-family: var(--ia-font-body); font-size: max(16px, 0.85rem); font-weight: 400;
 }
 .ia-nowplaying .ia-link {
   color: var(--ia-accent);
   text-decoration: none;
   margin-left: 6px;
-  font-size: 0.85em;
+  font-size: max(16px, 0.85em);
 }
 .ia-nowplaying .ia-link:hover,
 .ia-nowplaying .ia-link:focus-visible {
@@ -680,7 +691,7 @@ ia-player {
 }
 .ia-sources .ia-column-header {
   padding: 7px 12px;
-  font-size: 0.68rem;
+  font-size: max(16px, 0.68rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -728,14 +739,14 @@ ia-player {
 }
 .ia-sources .ia-listbox-item {
   padding: 6px 10px;
-  font-size: 0.92rem;
+  font-size: max(16px, 0.92rem);
   display: flex;
   align-items: center;
   gap: 6px;
   min-width: 0;
 }
 .ia-sources .ia-listbox-checkbox {
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   color: var(--ia-text-disabled);
   flex-shrink: 0;
 }
@@ -754,7 +765,7 @@ ia-player {
   color: var(--ia-text-dim);
   cursor: pointer;
   padding: 0 4px;
-  font-size: 0.9rem;
+  font-size: max(16px, 0.9rem);
   visibility: hidden;
   flex-shrink: 0;
 }
@@ -806,7 +817,7 @@ ia-player {
   border: none;
   cursor: pointer;
   padding: 0 .25rem;
-  font-size: .9rem;
+  font-size: max(16px, .9rem);
   line-height: 1;
   color: var(--ia-text-faint, #888);
 }
@@ -861,7 +872,7 @@ ia-player {
   cursor: pointer;
   padding: 4px 6px;
   border-radius: 3px;
-  font-size: 0.85rem;
+  font-size: max(16px, 0.85rem);
   text-align: left;
 }
 .ia-column-footer button.ia-add-genre-btn:hover,
@@ -925,7 +936,7 @@ ia-player {
   border: 1px solid var(--ia-border-strong);
   border-radius: 4px;
   padding: 6px 8px;
-  font-size: 0.82rem;
+  font-size: max(16px, 0.82rem);
   cursor: pointer;
 }
 .ia-sources-actions button:hover,
@@ -955,7 +966,7 @@ ia-player {
   border: none;
   color: var(--ia-text);
   padding: 6px 10px;
-  font-size: 0.88rem;
+  font-size: max(16px, 0.88rem);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -1006,7 +1017,7 @@ ia-player {
   padding: 8px 12px;
   font-family: var(--ia-font-display);
   font-optical-sizing: auto;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ia-text-soft);
@@ -1015,7 +1026,7 @@ ia-player {
 }
 .ia-album-note {
   padding: 5px 10px;
-  font-size: 0.72rem;
+  font-size: max(16px, 0.72rem);
   line-height: 1.3;
   color: var(--ia-text-dim);
   background: var(--ia-bg-elev);
@@ -1081,7 +1092,7 @@ ia-player {
 .ia-listbox-divider {
   padding: 8px 12px 3px;
   color: var(--ia-text-muted);
-  font-size: 0.72rem;
+  font-size: max(16px, 0.72rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1098,7 +1109,7 @@ ia-player {
   padding: 14px 12px;
   color: var(--ia-text-faint);
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: max(16px, 0.88rem);
   cursor: default;
 }
 
@@ -1123,7 +1134,7 @@ ia-player {
      is enforced here on the table as a whole. */
   min-width: 500px;
   border-collapse: collapse;
-  font-size: 0.92rem;
+  font-size: max(16px, 0.92rem);
   table-layout: fixed;
 }
 .ia-tracklist.resizing { cursor: col-resize; user-select: none; }
@@ -1137,7 +1148,7 @@ ia-player {
   position: relative;
   text-align: left;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: max(16px, 0.78rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--ia-text-dim);
@@ -1151,7 +1162,7 @@ ia-player {
 .ia-tracklist th .sort-arrow {
   display: inline-block;
   margin-left: 4px;
-  font-size: 0.7rem;
+  font-size: max(16px, 0.7rem);
 }
 .ia-tracklist th .resize-handle {
   position: absolute;
@@ -1181,7 +1192,7 @@ col.col-time   { width: 76px; }
 col.col-fav    { width: 36px; }
 col.col-remove { width: 60px; }
 .ia-tracklist .col-num    { text-align: right; padding-right: 6px; }
-.ia-tracklist .col-time   { text-align: right; font-family: var(--ia-font-mono); font-size: 0.82em; font-variant-numeric: tabular-nums; color: var(--ia-text-dim); }
+.ia-tracklist .col-time   { text-align: right; font-family: var(--ia-font-mono); font-size: max(16px, 0.82em); font-variant-numeric: tabular-nums; color: var(--ia-text-dim); }
 .ia-tracklist .col-fav    { text-align: center; }
 .ia-tracklist .col-remove { text-align: center; }
 /* Header layout: keep button (left) + # label (right) in the col-num <th>,
@@ -1201,7 +1212,7 @@ col.col-remove { width: 60px; }
   background: transparent;
   border: 1px solid transparent;
   color: var(--ia-text-dim);
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   line-height: 1;
   padding: 2px 4px;
   border-radius: 4px;
@@ -1267,7 +1278,7 @@ col.col-remove { width: 60px; }
 /* ☆ communal-favourite toggle, prepended in the title cell. */
 .ia-track-fav-btn {
   background: transparent; border: none; cursor: pointer; padding: 0 .35em 0 0;
-  color: var(--ia-text-faint, #888); font-size: .95em; line-height: 1;
+  color: var(--ia-text-faint, #888); font-size: max(16px, .95em); line-height: 1;
 }
 .ia-track-fav-btn:hover { color: #e6b800; }
 .ia-track-fav-btn.on { color: #e6b800; }
@@ -1291,7 +1302,7 @@ col.col-remove { width: 60px; }
   background: transparent;
   border: none;
   color: var(--ia-text-fainter);
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   cursor: pointer;
   padding: 0;
   visibility: hidden;
@@ -1318,7 +1329,7 @@ col.col-remove { width: 60px; }
   background: var(--ia-bg-panel-strong);
   border-top: 1px solid var(--ia-border);
   color: var(--ia-text-muted);
-  font-size: 0.88rem;
+  font-size: max(16px, 0.88rem);
   min-height: 28px;
 }
 .ia-status-msg {
@@ -1337,7 +1348,7 @@ col.col-remove { width: 60px; }
   color: var(--ia-accent);
   text-decoration: none;
   margin-left: 6px;
-  font-size: 0.85em;
+  font-size: max(16px, 0.85em);
 }
 .ia-status .ia-link:hover,
 .ia-status .ia-link:focus-visible {
@@ -1416,7 +1427,7 @@ col.col-remove { width: 60px; }
   border-radius: var(--ia-radius-lg);
   padding: 24px 24px 20px;
   color: var(--ia-text);
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   line-height: 1.5;
 }
 
@@ -1443,7 +1454,7 @@ col.col-remove { width: 60px; }
   width: 100%;
   border-collapse: collapse;
   margin: 14px 0;
-  font-size: 0.9rem;
+  font-size: max(16px, 0.9rem);
 }
 
 .about-buttons th,
@@ -1532,7 +1543,7 @@ col.col-remove { width: 60px; }
   color: var(--ia-text-strong);
   border: 1px solid var(--ia-border-strong);
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
 }
 
 .manage-add-genre button {
@@ -1582,7 +1593,7 @@ col.col-remove { width: 60px; }
   border-radius: 4px;
   padding: 2px 8px;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
 }
 
 .manage-genre-head button:hover {
@@ -1643,7 +1654,7 @@ col.col-remove { width: 60px; }
   border: 1px solid var(--ia-border-strong);
   border-radius: 4px;
   padding: 2px 4px;
-  font-size: 0.85rem;
+  font-size: max(16px, 0.85rem);
   cursor: pointer;
 }
 
@@ -1676,7 +1687,7 @@ a:focus-visible,
   color: var(--ia-text-strong);
   border: 1px solid var(--ia-border-strong);
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   min-width: 0;
 }
 
@@ -1686,7 +1697,7 @@ a:focus-visible,
   color: var(--ia-text-strong);
   border: 1px solid var(--ia-border-strong);
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: max(16px, 0.95rem);
   max-width: 40%;
 }
 
@@ -1717,7 +1728,7 @@ a:focus-visible,
 
 .inline-confirm-text {
   color: var(--ia-accent-soft);
-  font-size: 0.85rem;
+  font-size: max(16px, 0.85rem);
 }
 
 .inline-confirm-yes,
@@ -1743,7 +1754,7 @@ a:focus-visible,
 
 .manage-hint {
   margin-top: 12px;
-  font-size: 0.85rem;
+  font-size: max(16px, 0.85rem);
   color: var(--ia-text-dim);
 }
 
@@ -1751,12 +1762,12 @@ a:focus-visible,
   background: var(--ia-bg-elev);
   padding: 1px 5px;
   border-radius: 3px;
-  font-size: 0.85rem;
+  font-size: max(16px, 0.85rem);
 }
 
 /* Filters modal form (lives inside .about-modal-content). */
 .filters-form { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
-.filters-hint { color: var(--ia-text-dim); font-size: 0.85rem; margin: 0 0 4px; }
+.filters-hint { color: var(--ia-text-dim); font-size: max(16px, 0.85rem); margin: 0 0 4px; }
 .filters-row {
   display: flex;
   align-items: center;
@@ -1788,6 +1799,51 @@ a:focus-visible,
 .filters-actions .filters-save { background: var(--ia-accent); border-color: var(--ia-accent); color: var(--ia-text-strong); }
 .filters-actions .filters-danger { border-color: var(--ia-danger, #c0392b); color: var(--ia-danger, #e74c3c); }
 .filters-actions .filters-danger:hover { background: var(--ia-danger, #c0392b); color: #fff; }
+
+/* Track card — the consolidated per-track card. Structure top to bottom:
+   title · action strip (favourite / visit, with Remove pushed to the far
+   right so the destructive action stands apart) · hairline · editor form
+   with a fixed label column so the three fields align as one block ·
+   hairline · Cancel/Save. Wider than the base modal so the form breathes.
+   (Kept AFTER the .filters-* styles above — same-specificity overrides
+   here must win by order.) */
+.about-modal-content.track-card {
+  max-width: 680px;
+  padding: 26px 30px 22px;
+}
+.track-card-actions {
+  margin: 0 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ia-border);
+  flex-wrap: wrap;
+}
+.track-card-actions .filters-danger { margin-left: auto; }
+.track-card .filters-form { gap: 12px; }
+.track-card .filters-row { flex-wrap: wrap; }
+.track-card .filters-row .filters-label {
+  flex: 0 0 6.5rem;
+  font-weight: 500;
+}
+.track-card .filters-row input[type="text"] {
+  flex: 1 1 14rem;
+  padding: 7px 10px;
+  background: var(--ia-bg-elev-2);   /* a step lighter than the card — reads as a field */
+}
+.track-card .filters-row input[type="text"]:focus-visible {
+  outline: 2px solid var(--ia-accent);
+  outline-offset: 1px;
+}
+.track-card .filters-form .filters-actions {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ia-border);
+}
+/* Shared-album note sits under the album input, aligned to the field
+   column (label width + row gap). 16px floor. */
+.track-card .track-album-note {
+  margin: -6px 0 0 calc(6.5rem + 12px);
+  font-size: max(16px, 0.85rem);
+}
 
 .about-modal-close {
   position: absolute;

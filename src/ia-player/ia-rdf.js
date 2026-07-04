@@ -2192,6 +2192,16 @@ export function getLocalArtistAlbums(store, artistNode) {
   return out;
 }
 
+// The Track node whose mo:item is the given media URL — used to re-link
+// queue rows restored from a JSON snapshot (node objects don't survive
+// serialization, and older snapshots never carried them) back to their
+// RDF Tracks once release docs are in the store.
+export function trackNodeForItemUrl(store, itemUrl) {
+  if (!store || !itemUrl) return null;
+  const m = store.match(null, MO('item'), sym(itemUrl));
+  return m.length ? m[0].subject : null;
+}
+
 // Tracks of a local Release, read straight from mo:track. Shapes each
 // like the live getTracks() output so the player code is path-agnostic.
 export function getLocalReleaseTracks(store, releaseNode) {

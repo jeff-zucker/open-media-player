@@ -611,6 +611,10 @@ export function renderTrackList(tbody, emptyEl, tracks, { currentTrackId, isFav,
   const wantsKebab = typeof useKebab === 'function'
     ? (t) => !!t.node && useKebab(t) !== false
     : (t) => !!t.node;
+  // favouritable may be a per-row predicate (RDF-backed rows carry their ☆
+  // on the track card instead of inline) or a plain boolean.
+  const favouritableFor = typeof favouritable === 'function'
+    ? (t) => !!favouritable(t) : () => !!favouritable;
   const favBtnHTML = (t) =>
     `<button type="button" class="ia-track-fav-btn${isFav && isFav(t) ? ' on' : ''}" data-url="${escapeHTML(t.url || '')}" data-name="${escapeHTML(t.name || '')}" data-artist="${escapeHTML(t.artist || '')}" data-album="${escapeHTML(t.album || '')}" title="Add to favourites" aria-label="Favourite" tabindex="-1">${isFav && isFav(t) ? '★' : '☆'}</button>`;
   const kebabHTML =
@@ -619,10 +623,10 @@ export function renderTrackList(tbody, emptyEl, tracks, { currentTrackId, isFav,
     `<button type="button" class="ia-track-remove-btn" aria-label="Remove from favourites" title="Remove from favourites">✕</button>`;
   const actionCell = (t) => {
     if (wallDelete) return removeHTML;
-    let html = favouritable ? favBtnHTML(t) : '';
+    let html = favouritableFor(t) ? favBtnHTML(t) : '';
     if (wantsKebab(t)) html += kebabHTML;
     // A non-favouritable row with no kebab still needs its remove affordance.
-    if (!favouritable && !wantsKebab(t)) html += removeHTML;
+    if (!favouritableFor(t) && !wantsKebab(t)) html += removeHTML;
     return html;
   };
   const rows = tracks.map((t, i) => {
@@ -1053,14 +1057,11 @@ export function showLibraryEditModal({ title = 'Edit library', values = {}, canD
 // Edit a playlist track's title / artist / album. `siblingCount` > 0
 // surfaces a note that the album edit is shared by that many other
 // tracks from the same source.
-export function showTrackEditModal({ values = {}, siblingCount = 0, actions, onSave }) {
+export function showTrackEditModal({ values = {}, siblingCount = 0, actions, onSave, title }) {
   const existing = document.querySelector('.about-modal');
   if (existing) existing.remove();
 
   const v = values || {};
-  const albumNote = siblingCount > 0
-    ? ` (also updates ${siblingCount} other track${siblingCount === 1 ? '' : 's'} from this source)`
-    : '';
   const overlay = document.createElement('div');
   overlay.className = 'about-modal';
   overlay.innerHTML = trackEditModalTpl;
@@ -1068,8 +1069,23 @@ export function showTrackEditModal({ values = {}, siblingCount = 0, actions, onS
   seed.title.value = v.title || '';
   seed.artist.value = v.artist || '';
   seed.album.value = v.album || '';
-  if (albumNote) overlay.querySelector('.filters-album-label').textContent = 'Album' + albumNote;
-  overlay.querySelector('.filters-actions').insertAdjacentHTML('afterbegin', actionsHTML(actions));
+  // Shared-album note goes under the field as a hint, not into the label —
+  // a long label wrecks the form's label column.
+  if (siblingCount > 0) {
+    const note = overlay.querySelector('.track-album-note');
+    note.textContent =
+      `Also updates ${siblingCount} other track${siblingCount === 1 ? '' : 's'} from this source.`;
+    note.hidden = false;
+  }
+  if (title) overlay.querySelector('.about-modal-title').textContent = title;
+  // Action buttons (favourite / visit / remove) get their own row above the
+  // form — the .filters-actions row inside the form stays Cancel/Save only.
+  const extraHTML = actionsHTML(actions);
+  if (extraHTML) {
+    const box = overlay.querySelector('.track-card-actions');
+    box.innerHTML = extraHTML;
+    box.hidden = false;
+  }
   document.body.appendChild(overlay);
 
   const restoreFocus = trapFocus(overlay);
