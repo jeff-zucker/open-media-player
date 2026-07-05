@@ -20,6 +20,9 @@
   <form class="ia-artist-search" role="search">
     <input class="ia-artist-search-input" type="search" placeholder="{{find}}" aria-label="Find by name (creator search)">
   </form>
+  <!-- Phone only (display:none on desktop — ia.css): opens the browse sheet
+       that replaces the sources column + browser cascade on a coarse pointer. -->
+  <button type="button" class="ia-btn ia-browse-btn" aria-haspopup="dialog" aria-expanded="false"><span class="ia-icon" aria-hidden="true">▤</span><span class="ia-blabel">Browse</span></button>
   <span class="gear-wrap">
     <button type="button" class="ia-btn manage-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Open menu" title="Menu"><span class="ia-icon" aria-hidden="true">⋮</span><span class="ia-blabel">Menu</span></button>
     <div class="gear-menu" role="menu" hidden>

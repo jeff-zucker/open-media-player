@@ -27,6 +27,9 @@ import {
   setSolidWriteAuthed
 } from "./ia-rdf.js";
 import { sym } from "../shared/rdf-shared.js";
+// The phone browse sheet's surface element (registers <sol-sheet>; a no-op
+// when the host page's loader already defined it — define() guards).
+import "sol-components/web/sol-sheet.js";
 import {
   createPlayerUI,
   createListbox,
@@ -117,8 +120,64 @@ function createPlayer({ libraryConfigs, libs, host }) {
     addPlaylistBtn, addSourceBtn,
     addGenreBtn, addArtistBtn, genreColumnFooter, artistColumnFooter,
     themeToggle, fontSizeBtn,
+    browseBtn, isPhone,
     setMenuOpen
   } = ui;
+
+  // ── Phone browse sheet (coarse pointer only; desktop never runs this) ──
+  // The sources column + browser cascade are display:none on the phone
+  // (ia.css); their live listbox ULs MOVE into a bottom sheet behind the
+  // toolbar's Browse pill. Same nodes — every refresh/selection wiring
+  // holds. Sections are native <details name=…> (exclusive-open); the
+  // cascade advances like desktop: pick a genre → Artists opens, pick an
+  // artist → Albums opens, pick an album → the sheet closes over the
+  // just-updated tracklist.
+  if (isPhone && browseBtn) {
+    const sheet = document.createElement('sol-sheet');
+    sheet.setAttribute('label', 'Browse the library');
+    sheet.className = 'ia-browse-sheet';
+    const sections = {};
+    const headerText = (sel, fallback) =>
+      container.querySelector(sel)?.textContent?.trim() || fallback;
+    const addSection = (key, title, nodes) => {
+      const det = document.createElement('details');
+      det.className = 'ia-sheet-section';
+      det.name = 'ia-browse';
+      const sum = document.createElement('summary');
+      sum.textContent = title;
+      det.append(sum, ...nodes.filter(Boolean));
+      sheet.appendChild(det);
+      sections[key] = det;
+    };
+    addSection('libraries', headerText('#ia-h-libs', 'Libraries'), [librariesList]);
+    if (!favouritesOnly) {
+      addSection('playlists', headerText('#ia-h-sources', 'Playlists'), [sourcesList, addPlaylistBtn]);
+    }
+    addSection('favourites', headerText('#ia-h-favs', 'Community Favorites'), [favouritesList]);
+    addSection('genres', headerText('[data-column="genre"] .ia-column-header', 'Genres'),
+      [genreList, genreColumnFooter]);
+    addSection('artists', headerText('[data-column="artist"] .ia-column-header', 'Artists'),
+      [artistList, artistColumnFooter]);
+    addSection('albums', headerText('[data-column="album"] .ia-column-header', 'Albums'),
+      [albumList]);
+    sections.genres.open = true;
+    container.appendChild(sheet);
+
+    browseBtn.addEventListener('click', () => sheet.show());
+    sheet.addEventListener('sol-ready', () => browseBtn.setAttribute('aria-expanded', 'true'));
+    sheet.addEventListener('sol-close', () => browseBtn.setAttribute('aria-expanded', 'false'));
+    // Cascade auto-advance / close. Runs after the listbox's own click
+    // handling; the short delay lets the selection paint first.
+    genreList.addEventListener('click', (e) => {
+      if (e.target.closest('li')) setTimeout(() => { sections.artists.open = true; }, 200);
+    });
+    artistList.addEventListener('click', (e) => {
+      if (e.target.closest('li')) setTimeout(() => { sections.albums.open = true; }, 200);
+    });
+    albumList.addEventListener('click', (e) => {
+      if (e.target.closest('li')) setTimeout(() => sheet.hide(), 250);
+    });
+  }
 
   // ---- appearance (light/dark + text size) ---------------------------
   // Both live on the document root so the two library panels stay in sync.

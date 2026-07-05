@@ -26,6 +26,36 @@ export function createPlayerUI({ mediaType = 'audio', panel = false } = {}) {
   // Embedded-panel mode: the page hosts one shared sign-in; drop the menu's.
   if (panel) container.querySelector('.menu-item-sollogin')?.remove();
 
+  // Phone (coarse pointer): relocate the transport + now-playing into a
+  // bottom dock (thumb zone). Same nodes, so every existing wiring holds;
+  // the ia.css coarse-pointer block styles the dock and re-stacks the grid.
+  // Desktop never enters this branch — the layout there is untouched.
+  const isPhone = typeof matchMedia === 'function'
+    && matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (isPhone) {
+    const dock = document.createElement('div');
+    dock.className = 'ia-phone-dock';
+    // Row 1: now-playing text + the time readout (moved out of the seek
+    // wrap so the slider below gets the full row width at phone sizes).
+    const npRow = document.createElement('div');
+    npRow.className = 'ia-phone-npline';
+    npRow.append(
+      container.querySelector('.ia-nowplaying'),
+      container.querySelector('.ia-time'),
+    );
+    // Row 2: transport + a full-width seek strip.
+    const transport = document.createElement('div');
+    transport.className = 'ia-phone-transport';
+    transport.append(
+      container.querySelector('.ia-prev'),
+      container.querySelector('.ia-play'),
+      container.querySelector('.ia-next'),
+      container.querySelector('.ia-seek-wrap'),
+    );
+    dock.append(npRow, transport);
+    container.appendChild(dock);
+  }
+
   const manageButton = container.querySelector('.manage-btn');
   const gearMenu = container.querySelector('.gear-menu');
   const menuItems = () => Array.from(gearMenu.querySelectorAll('.menu-item'));
@@ -116,6 +146,8 @@ export function createPlayerUI({ mediaType = 'audio', panel = false } = {}) {
     librariesList: container.querySelector('.ia-libraries-list'),
     addSourceBtn: container.querySelector('.ia-add-source-btn'),
     addPlaylistBtn: container.querySelector('.ia-add-playlist-btn'),
+    browseBtn: container.querySelector('.ia-browse-btn'),
+    isPhone,
     genreList: container.querySelector('[data-column="genre"] .ia-listbox'),
     artistList: container.querySelector('[data-column="artist"] .ia-listbox'),
     albumList: container.querySelector('[data-column="album"] .ia-listbox'),

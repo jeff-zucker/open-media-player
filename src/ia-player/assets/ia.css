@@ -1884,3 +1884,182 @@ a:focus-visible,
 p {
   margin-bottom:1em;
 }
+
+/* ═════════════════════════════════════════════════════════════════════════
+   PHONE LAYER (Android) — everything below is scoped to a coarse pointer,
+   so desktop cannot reach it by construction (same discipline as the dk
+   shell). Structure on a phone:
+     toolbar (search · Browse pill · ⋮)  →  tracklist (the whole stage)
+     →  status  →  bottom dock (now-playing + transport, thumb zone).
+   The sources column + browser cascade are hidden here — their live lists
+   move into the <sol-sheet> behind the Browse pill (ia3.js phone branch).
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* The Browse pill exists in the markup for every pointer; only the phone
+   shows it. */
+.ia-browse-btn { display: none; }
+
+@media (hover: none) and (pointer: coarse) {
+  /* Doubled class: the desktop layout has 0-2-0 state variants
+     (.source-no-browser, .media-video, …) that would out-rank a plain
+     .ia-player-app phone override; this block must win them all. */
+  .ia-player-app.ia-player-app {
+    /* minmax(0,…): a bare 1fr track's automatic minimum is its content's
+       min-width, so one nowrap line (the now-playing marquee) silently
+       inflated the whole column to ~1100px and pushed the Browse pill
+       off-screen (measured on-device). */
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "toolbar"
+      "tracklist"
+      "status"
+      "dock";
+  }
+  .ia-player-app .ia-sources, .ia-player-app .ia-browser { display: none; }
+
+  /* Toolbar slims to search · Browse · ⋮ (transport moved to the dock,
+     volume is the phone's hardware buttons). */
+  .ia-volume-wrap { display: none; }
+  .ia-toolbar { gap: 8px; padding: 8px 10px; }
+  /* flex-basis 0 (not auto): the input's desktop min-width/content size
+     otherwise inflates the form's base size past the viewport (measured
+     956px on-device) and shoves the Browse pill off-screen. */
+  .ia-artist-search { flex: 1 1 0; min-width: 0; }
+  .ia-artist-search-input { width: 100%; min-width: 0; min-height: 44px; }
+  /* The Browse pill speaks the navigator-trigger dialect: round, roomy,
+     icon beside a normal-case label (the desktop .ia-blabel micro-caps
+     read cramped at this size). */
+  .ia-browse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    flex: 0 0 auto;
+    flex-direction: row;
+  }
+  .ia-browse-btn .ia-blabel {
+    font-size: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    color: inherit;
+  }
+  /* ⋮ goes icon-only — its label steals pill room at 360px. */
+  .manage-btn { min-width: 44px; min-height: 44px; }
+  .manage-btn .ia-blabel { display: none; }
+
+  /* Bottom dock: now-playing line + fat transport in the thumb zone. */
+  .ia-phone-dock {
+    grid-area: dock;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--ia-border);
+    background: var(--ia-bg-elev);
+  }
+  /* Row 1: now-playing (ellipsized) + the time readout at the right —
+     the times live HERE so the seek strip below gets the whole row. */
+  .ia-phone-npline {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .ia-phone-npline .ia-nowplaying {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ia-phone-npline .ia-time { flex: 0 0 auto; }
+  .ia-phone-transport {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ia-phone-transport .ia-btn {
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+  }
+  /* Icon-only transport buttons — the text labels are dock clutter at
+     this size; the buttons keep their aria-labels. */
+  .ia-phone-transport .ia-blabel { display: none; }
+  .ia-phone-transport .ia-seek-wrap { flex: 1 1 auto; min-width: 0; }
+  .ia-phone-transport .ia-seek {
+    width: 100%;
+    height: 28px;   /* fat touch strip */
+  }
+  /* .ia-time moved to the npline row above (ia-ui.js phone branch). */
+
+  /* Tracklist is the stage. Phone rows leave the table grid behind: each
+     row is a two-line entry (title over dim artist) with the time and the
+     ⋯ on the right; the header row and the #/Album columns go away and
+     nothing scrolls sideways. */
+  .ia-tracklist-wrap { overflow-x: hidden; }
+  .ia-tracklist { display: block; width: 100%; min-width: 0; }   /* drop the 500px desktop floor */
+  .ia-tracklist colgroup, .ia-tracklist thead { display: none; }
+  .ia-tracklist tbody { display: block; }
+  .ia-track-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content max-content;
+    column-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    min-height: 56px;
+    border-bottom: 1px solid var(--ia-border);
+  }
+  .ia-track-row td { display: block; padding: 0; border: none; }
+  .ia-track-row .col-num, .ia-track-row .col-album { display: none; }
+  .ia-track-row .col-title {
+    grid-column: 1; grid-row: 1;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-weight: 500;
+  }
+  .ia-track-row .col-artist {
+    grid-column: 1; grid-row: 2;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    color: var(--ia-text-dim);
+  }
+  .ia-track-row .col-time { grid-column: 2; grid-row: 1 / span 2; }
+  .ia-track-row .col-remove { grid-column: 3; grid-row: 1 / span 2; }
+  .ia-track-row.playing { box-shadow: inset 3px 0 0 var(--ia-accent); }
+
+  /* Browse sheet content (light DOM inside <sol-sheet>): the moved lists,
+     grouped in native exclusive <details> sections. */
+  .ia-browse-sheet .ia-sheet-section {
+    border-bottom: 1px solid var(--ia-border);
+  }
+  .ia-browse-sheet summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .ia-browse-sheet summary::after {
+    content: "▾";
+    margin-left: auto;
+    color: var(--ia-text-dim);
+    transition: transform 0.15s ease;
+  }
+  .ia-browse-sheet .ia-sheet-section[open] > summary::after { transform: rotate(180deg); }
+  .ia-browse-sheet .ia-listbox {
+    max-height: 38vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 8px 10px;
+  }
+  .ia-browse-sheet .ia-listbox li { min-height: 44px; }
+  .ia-browse-sheet .ia-column-footer,
+  .ia-browse-sheet .ia-add-playlist-btn { margin: 0 8px 10px; }
+  .ia-browse-sheet .ia-add-playlist-btn,
+  .ia-browse-sheet .ia-add-genre-btn,
+  .ia-browse-sheet .ia-add-artist-btn { min-height: 44px; }
+}
