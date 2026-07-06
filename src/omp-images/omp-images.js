@@ -63,6 +63,25 @@ class OmpImages extends HTMLElement {
     this._gallery.addEventListener('load-more', () => this._pump && this._pump());
     right.append(browser, this._gallery);
 
+    // Phone (coarse pointer): the favourites column + 3-column browser are
+    // hidden (CSS); a two-row snap-scrolling chip switcher stands in (M3) —
+    // the same pill idiom as the feed's chip row and the player's Browse
+    // pill. Chips call the SAME selection methods the hidden columns use.
+    this._isPhone = typeof matchMedia === 'function'
+      && matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (this._isPhone) {
+      const chips = document.createElement('div');
+      chips.className = 'oi-chips';
+      const topicsRow = document.createElement('div');
+      topicsRow.className = 'oi-chip-row oi-chip-topics';
+      const collsRow = document.createElement('div');
+      collsRow.className = 'oi-chip-row oi-chip-colls';
+      chips.append(topicsRow, collsRow);
+      right.insertBefore(chips, browser);
+      this._chips = { topicsRow, collsRow };
+      this._chipMode = 'topics';
+    }
+
     this.shadowRoot.append(style, this._favPane.pane, right);
 
     this._buildAddControls();
@@ -117,6 +136,7 @@ class OmpImages extends HTMLElement {
       this._renderLibraries();
       this._renderFavourites();
       this._restoreSelection();
+      this._renderChips();
       this._loaded = true;
     } finally {
       this._loading = false;
@@ -188,6 +208,7 @@ class OmpImages extends HTMLElement {
     this._hint(this._collPane.list, 'Select a topic');
     this._addCollBtn.disabled = true;
     this._addTopicBtn.disabled = false;
+    this._renderChips();
   }
 
   /* ── Topic column ─────────────────────────────────────────────────────── */
@@ -209,6 +230,7 @@ class OmpImages extends HTMLElement {
     this._mark(this._topicBtns, this._topicBtns.get(topic.iri));
     this._renderColls(topic);
     this._addCollBtn.disabled = false;
+    this._renderChips();
   }
 
   /* ── Collection column (with ★) ───────────────────────────────────────── */
@@ -261,6 +283,7 @@ class OmpImages extends HTMLElement {
     } catch { this._favColls = []; this._favLandings = new Set(); }
     this._renderFavourites();
     this._refreshStars();
+    this._renderChips();
   }
 
   /** Update the ☆/★ state of any visible collection rows. */
@@ -392,6 +415,65 @@ class OmpImages extends HTMLElement {
       }
     };
     this._pump();
+    this._renderChips();
+  }
+
+  /* ── Phone chip rows (M3) ─────────────────────────────────────────────── */
+  /* The topic/collection switcher in the feed's snap-scrolling pill idiom:
+     row 1 = ★ Favorites + every topic, row 2 = the active topic's
+     collections (or the favourite collections). A thin skin — every tap
+     lands in the same _selectTopic/_openCollection/openByRef the desktop
+     columns use, so state, persistence, and the gallery pump are shared. */
+  _renderChips() {
+    if (!this._isPhone || !this._chips) return;
+    const { topicsRow, collsRow } = this._chips;
+    topicsRow.replaceChildren();
+    collsRow.replaceChildren();
+    const chip = (parent, label, active, onTap) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'oi-chip' + (active ? ' active' : '');
+      b.textContent = label;
+      b.addEventListener('click', onTap);
+      parent.appendChild(b);
+    };
+    if (this._favColls?.length) {
+      chip(topicsRow, '★ Favorites', this._chipMode === 'favs',
+        () => { this._chipMode = 'favs'; this._renderChips(); });
+    }
+    for (const lib of (this._libraries || [])) {
+      for (const t of (this._topicsByLib?.get(lib.iri) || [])) {
+        chip(topicsRow, t.label,
+          this._chipMode !== 'favs' && this._activeTopic?.iri === t.iri,
+          () => {
+            this._chipMode = 'topics';
+            if (this._activeLibrary?.iri !== lib.iri) this._selectLibrary(lib);
+            this._selectTopic(t);
+          });
+      }
+    }
+    if (this._chipMode === 'favs') {
+      const favs = [...(this._favColls || [])]
+        .sort((a, b) => a.canonicalTitle.localeCompare(b.canonicalTitle));
+      for (const g of favs) {
+        const landing = g.link || g.item;
+        const rec = [...(this._collByIri?.values() || [])]
+          .find((r) => r.landingPage === landing);
+        chip(collsRow, g.canonicalTitle,
+          !!rec && this._activeCollIri === rec.iri,
+          () => this.openByRef(landing));
+      }
+    } else if (this._activeTopic) {
+      for (const c of (this._collsByTopic?.get(this._activeTopic.iri) || [])) {
+        chip(collsRow, c.title, this._activeCollIri === c.iri,
+          () => this._openCollection(c));
+      }
+    }
+    collsRow.hidden = collsRow.children.length === 0;
+    requestAnimationFrame(() => {
+      topicsRow.querySelector('.active')?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+      collsRow.querySelector('.active')?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+    });
   }
 
   _restoreSelection() {

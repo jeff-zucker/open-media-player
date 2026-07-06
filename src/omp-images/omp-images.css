@@ -59,3 +59,53 @@
   .add-err { font-size: max(16px, .7em); color: var(--error, #e74c3c); padding: 0 .2rem; }
 
   sol-gallery { flex: 1 1 auto; min-width: 0; min-height: 0; }
+
+  /* Chip switcher exists only on the phone (built in the coarse-pointer
+     branch of connectedCallback); belt-and-braces hide elsewhere. */
+  .oi-chips { display: none; }
+
+  /* ── Phone (M3): favourites column + 3-column browser give way to two
+     snap-scrolling chip rows over a 2-column gallery. Same pill dialect
+     as the navigator trigger and the player's Browse pill. ── */
+  @media (hover: none) and (pointer: coarse) {
+    :host { flex-direction: column !important; }
+    .fav-col, .browser { display: none; }
+    .oi-chips {
+      display: block;
+      flex: 0 0 auto;
+      background: var(--surface, #fff);
+      border-bottom: 1px solid var(--border, #d0d0d0);
+    }
+    .oi-chip-row {
+      display: flex;
+      gap: 8px;
+      padding: 8px 10px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .oi-chip-row::-webkit-scrollbar { display: none; }
+    .oi-chip-row + .oi-chip-row { padding-top: 0; }
+    .oi-chip-row[hidden] { display: none; }
+    .oi-chip {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--border, #c0c0c0);
+      border-radius: 999px;
+      background: var(--surface, #fff);
+      color: var(--text, #212121);
+      font: inherit;
+      font-size: max(16px, .8em);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .oi-chip.active {
+      background: var(--accent, #3498db);
+      border-color: transparent;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
