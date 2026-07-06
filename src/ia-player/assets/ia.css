@@ -368,6 +368,8 @@ ia-player {
 .ia-film-intro-rights { margin: 0 0 1rem; font-size: max(16px, .9rem); color: #aeb9c4; }
 .ia-film-intro-rights:empty { display: none; }
 .ia-film-intro-hint { margin: 0; font-size: max(16px, .92rem); font-style: italic; color: #aeb9c4; }
+/* Two hint wordings; the coarse-pointer block below swaps them. */
+.ia-hint-phone { display: none; }
 .ia-nowplaying .ia-np-rights { color: #aeb9c4; }
 
 /* --- Toolbar ----------------------------------------------------- */
@@ -2062,4 +2064,49 @@ p {
   .ia-browse-sheet .ia-add-playlist-btn,
   .ia-browse-sheet .ia-add-genre-btn,
   .ia-browse-sheet .ia-add-artist-btn { min-height: 44px; }
+
+  /* ── M2: Movies (media-video) ──────────────────────────────────── */
+  /* Desktop movies hide the toolbar (films are picked in the browser
+     columns) — the phone needs it back: it carries the Browse pill. */
+  .ia-player-app.ia-player-app.media-video .ia-toolbar { display: flex; }
+  /* The stage splits: video pinned on top (16:9 letterbox), the film
+     list (Favorites view) beneath, dock in the thumb zone. The player
+     row is auto-sized — an idle movies screen shows no black box (both
+     the <video> and the intro stay display:none until .has-video /
+     .film-intro). */
+  .ia-player-app.ia-player-app.media-video {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "toolbar"
+      "player"
+      "tracklist"
+      "status"
+      "dock";
+  }
+  .ia-player-app.ia-player-app.media-video.has-video .ia-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    align-self: start;
+  }
+  /* Film intro: full-bleed over the same 16:9 stage; the card takes the
+     whole width (its desktop 38rem max is wider than the phone). */
+  .ia-player-app.ia-player-app.media-video.film-intro .ia-film-intro {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    padding: 12px;
+    align-self: start;
+    overflow: auto;
+  }
+  .ia-film-intro-card { max-width: 100%; }
+  /* Favorites: the film list lives BENEATH the stage instead of sharing
+     the desktop's one `player` cell (where the video paints over it). */
+  .ia-player-app.ia-player-app.media-video.source-favorites .ia-tracklist-wrap {
+    display: block;
+    grid-area: tracklist;
+  }
+  /* Touch wording on the intro hint (no mouse, native fullscreen). */
+  .ia-hint-desktop { display: none; }
+  .ia-hint-phone { display: block; }
 }

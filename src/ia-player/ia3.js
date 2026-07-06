@@ -346,15 +346,18 @@ function createPlayer({ libraryConfigs, libs, host }) {
     albumCol.setAllLabel(L.allAlbum);
     const searchInput = container.querySelector('.ia-artist-search-input');
     if (searchInput) searchInput.placeholder = L.find;
-    // Movies have no transport bar — the whole toolbar is hidden (CSS), so
-    // relocate the film-search onto the far right of the now-playing line.
-    // Audio keeps it in the toolbar.
+    // DESKTOP movies have no transport bar — the whole toolbar is hidden
+    // (CSS), so relocate the film-search onto the far right of the
+    // now-playing line. Audio keeps it in the toolbar — and so does the
+    // PHONE for both media types: its movies toolbar is back (Browse pill
+    // lives there) while .ia-nowplaying sits inside the bottom dock, where
+    // a search field has no business (M2).
     const searchForm = container.querySelector('.ia-artist-search');
     const npRow = container.querySelector('.ia-nowplaying');
     const toolbar = container.querySelector('.ia-toolbar');
     if (searchForm) {
-      if (mt === 'video' && npRow && searchForm.parentElement !== npRow) npRow.appendChild(searchForm);
-      else if (mt !== 'video' && toolbar && searchForm.parentElement === npRow) toolbar.appendChild(searchForm);
+      if (mt === 'video' && !isPhone && npRow && searchForm.parentElement !== npRow) npRow.appendChild(searchForm);
+      else if ((mt !== 'video' || isPhone) && toolbar && searchForm.parentElement === npRow) toolbar.appendChild(searchForm);
     }
     // If the Albums column is currently showing the "choose an artist"
     // placeholder, relabel it in place.
