@@ -2031,6 +2031,21 @@ p {
   .ia-track-row .col-remove { grid-column: 3; grid-row: 1 / span 2; }
   .ia-track-row.playing { box-shadow: inset 3px 0 0 var(--ia-accent); }
 
+  /* The desktop rules paint row states on the TDs — on the phone grid
+     (gaps + row padding) that reads as patchy stripes. Paint the ROW
+     and clear the cells so zebra/selected/playing cover the full row. */
+  .ia-track-row:nth-child(even) { background: var(--ia-bg-row-alt); }
+  .ia-track-row:focus { background: var(--ia-bg-row-focus); }
+  .ia-track-row.selected { background: var(--ia-bg-row-selected); }
+  .ia-track-row.playing { background: var(--ia-bg-row-playing); }
+  .ia-track-row.selected.playing { background: var(--ia-bg-row-playing-sel); }
+  .ia-track-row td,
+  .ia-track-row:nth-child(even) td,
+  .ia-track-row:focus td,
+  .ia-track-row.selected td,
+  .ia-track-row.playing td,
+  .ia-track-row.selected.playing td { background: transparent; }
+
   /* Browse sheet content (light DOM inside <sol-sheet>): the moved lists,
      grouped in native exclusive <details> sections. */
   .ia-browse-sheet .ia-sheet-section {
