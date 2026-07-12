@@ -1,6 +1,6 @@
 {
   "name": "open-media-player",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "description": "Access thousands of music tracks, movies, images from the Internet Archive and Wikimedia.",
   "author": "Jeff Zucker",

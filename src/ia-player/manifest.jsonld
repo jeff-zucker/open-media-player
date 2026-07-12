@@ -58,49 +58,5 @@
   "help": "./assets/ia-help.html",
   "shape": "../../shapes/music.shacl",
   "subject": "Media",
-  "@included": [
-    {
-      "@id": "#Menu",
-      "@type": "Menu",
-      "label": "Player",
-      "parts": [
-        {
-          "@id": "#Filters",
-          "@type": "Component",
-          "label": "Filters…",
-          "name": "filters",
-          "mode": "acl:Write"
-        },
-        {
-          "@id": "#ViewDeleted",
-          "@type": "Component",
-          "label": "View deleted",
-          "name": "viewDeleted",
-          "mode": "acl:Write"
-        },
-        {
-          "@id": "#ImportMusic",
-          "@type": "Component",
-          "label": "Import music folder…",
-          "name": "importMusic",
-          "mode": "acl:Write"
-        },
-        {
-          "@id": "#InstallPod",
-          "@type": "Component",
-          "label": "Install on my Pod…",
-          "name": "installPod",
-          "mode": "acl:Write"
-        },
-        {
-          "@id": "#UpdateApp",
-          "@type": "Component",
-          "label": "Update app on Pod…",
-          "name": "updateApp",
-          "mode": "acl:Write"
-        }
-      ]
-    }
-  ],
   "icon": "🎵"
 }
