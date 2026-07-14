@@ -59,10 +59,6 @@
     foaf:name "Michael McClure";
     dcat:landingPage <https://archive.org/search?query=collection%3A%28naropa%29&and%5B%5D=creator%3A%28%22McClure%22%29&and%5B%5D=mediatype%3A%22audio%22>;
     mo:genre genres:Poetry.
-<urn:uuid:4a7e501f-8dd5-4960-9f5c-41202c12fc8a> a foaf:Agent;
-    foaf:name "Ishmael Reed";
-    dcat:landingPage <https://archive.org/search?query=creator%3A%22Ishmael+Reed%22&and%5B%5D=mediatype%3A%22audio%22>;
-    mo:genre genres:Poetry.
 <urn:uuid:ece9013a-301a-47a7-8751-10521fc50aa6> a foaf:Agent;
     foaf:name "Jerome Rothenberg";
     dcat:landingPage <https://archive.org/search?query=collection%3A%28naropa%29&and%5B%5D=creator%3A%28%22Rothenberg%22%29&and%5B%5D=mediatype%3A%22audio%22>;

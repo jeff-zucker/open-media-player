@@ -11,7 +11,7 @@
     schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     oa:styleClass "hidden" ;
-    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11>, <#e12>, <#e13>, <#e14>, <#e15>, <#e16>, <#e17>, <#e18>, <#e19>, <#e20>, <#e21>, <#e22>, <#e23>, <#e24>, <#e25>, <#e26>, <#e27>, <#e28>, <#e29>, <#e30>, <#e31>, <#e32>, <#e33>, <#e34>, <#e35>, <#e36>, <#e37>, <#e38>, <#e39>, <#e40>, <#e41>, <#e42>, <#e43>, <#e44>, <#e45>, <#e46>, <#e47> .
+    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e22>, <#e23>, <#e24>, <#e25>, <#e26>, <#e27>, <#e28>, <#e29>, <#e30>, <#e31>, <#e32>, <#e33>, <#e34>, <#e35>, <#e36>, <#e37>, <#e38>, <#e39>, <#e40>, <#e41>, <#e42>, <#e43>, <#e44>, <#e45>, <#e46>, <#e47> .
 
 <#e01>
     a schema:ListItem ;
@@ -57,66 +57,6 @@
     a schema:ListItem ;
     schema:position 9 ;
     schema:item <../releases/motown_beat_tape.ttl#t02> .
-
-<#e10>
-    a schema:ListItem ;
-    schema:position 10 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t01> .
-
-<#e11>
-    a schema:ListItem ;
-    schema:position 11 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t02> .
-
-<#e12>
-    a schema:ListItem ;
-    schema:position 12 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t03> .
-
-<#e13>
-    a schema:ListItem ;
-    schema:position 13 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t04> .
-
-<#e14>
-    a schema:ListItem ;
-    schema:position 14 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t05> .
-
-<#e15>
-    a schema:ListItem ;
-    schema:position 15 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t06> .
-
-<#e16>
-    a schema:ListItem ;
-    schema:position 16 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t07> .
-
-<#e17>
-    a schema:ListItem ;
-    schema:position 17 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t08> .
-
-<#e18>
-    a schema:ListItem ;
-    schema:position 18 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t09> .
-
-<#e19>
-    a schema:ListItem ;
-    schema:position 19 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t10> .
-
-<#e20>
-    a schema:ListItem ;
-    schema:position 20 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t11> .
-
-<#e21>
-    a schema:ListItem ;
-    schema:position 21 ;
-    schema:item <../releases/rebirth_of_detroit.ttl#t12> .
 
 <#e22>
     a schema:ListItem ;

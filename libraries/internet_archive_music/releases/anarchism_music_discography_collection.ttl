@@ -9,7 +9,7 @@
     dct:identifier "anarchism-music-discography-collection_202603" ;
     dct:isPartOf <../releases.ttl#it> ;
     dcat:landingPage <https://archive.org/details/anarchism-music-discography-collection_202603> ;
-    mo:track <#t01>, <#t02>, <#t03>, <#t04>, <#t05> ;
+    mo:track <#t01>, <#t02>, <#t03>, <#t05> ;
     foaf:maker <urn:uuid:2810c76f-04ca-412c-b7ae-22801c59cf2d>, <urn:uuid:98d897c7-8634-44f1-b3e5-f59b409a9e40>, <urn:uuid:b95be055-69d4-4d84-8d80-76f531b71897>, <urn:uuid:c030a1db-0599-441e-9345-7780fd5afee3> .
 
 <#t01>
@@ -33,12 +33,6 @@
     mo:item <https://archive.org/download/anarchism-music-discography-collection_202603/002%20-%20%5Bnew%5D%202Pac%20-%20Write%20This%20Down%20(feat.%20DMX%2C%20Eazy%20E%2C%20Ice%20Cube%2C%20Dr%20Dre%2C%20MC%20Ren%2C%20Method%20Man%2C%20Nas%2C%20Biggie%2C%20Pop%20Smoke%2C%20Nipsey%2C%20Snoop%20Dogg).mp3> ;
     dct:isPartOf <#it> .
 
-<#t04>
-    a mo:Track ;
-    dct:title "White Man'z World" ;
-    mo:duration "338" ;
-    mo:item <https://archive.org/download/anarchism-music-discography-collection_202603/020%20-%20White%20Man'z%20World.mp3> ;
-    dct:isPartOf <#it> .
 
 <#t05>
     a mo:Track ;

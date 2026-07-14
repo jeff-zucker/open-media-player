@@ -493,10 +493,6 @@
     foaf:name "Jake Shimabukuro";
     dcat:landingPage <https://archive.org/details/JakeShimabukuro>;
     mo:genre genres:Unsorted.
-<urn:uuid:911d39d2-62e8-4ff5-91bf-0afd1d0bfd4b> a mo:MusicArtist;
-    foaf:name "Jeff Stange's Organ Odyssey";
-    dcat:landingPage <https://archive.org/details/JeffStangesOrganOdyssey>;
-    mo:genre genres:Unsorted.
 <urn:uuid:832fa9a7-8428-4be6-ac21-44f4c8098fa4> a mo:MusicArtist;
     foaf:name "Jen Say Kwahs";
     dcat:landingPage <https://archive.org/details/JenSayKwahs>;

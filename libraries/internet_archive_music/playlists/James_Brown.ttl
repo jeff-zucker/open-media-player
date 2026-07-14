@@ -12,7 +12,7 @@
     foaf:maker "jeffz" ;
     dct:description "Soul" ;
     oa:styleClass "hidden" ;
-    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11>, <#e12>, <#e13>, <#e14>, <#e15>, <#e16>, <#e17>, <#e18>, <#e19>, <#e20>, <#e21>, <#e22>, <#e23>, <#e24>, <#e25>, <#e26>, <#e27>, <#e28>, <#e29> .
+    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11>, <#e12>, <#e13>, <#e14>, <#e15> .
 
 <#e01>
     a schema:ListItem ;
@@ -88,73 +88,3 @@
     a schema:ListItem ;
     schema:position 15 ;
     schema:item <../releases/the_payback.ttl#t08> .
-
-<#e16>
-    a schema:ListItem ;
-    schema:position 16 ;
-    schema:item <../releases/time_for_payback.ttl#t01> .
-
-<#e17>
-    a schema:ListItem ;
-    schema:position 17 ;
-    schema:item <../releases/time_for_payback.ttl#t02> .
-
-<#e18>
-    a schema:ListItem ;
-    schema:position 18 ;
-    schema:item <../releases/time_for_payback.ttl#t03> .
-
-<#e19>
-    a schema:ListItem ;
-    schema:position 19 ;
-    schema:item <../releases/time_for_payback.ttl#t04> .
-
-<#e20>
-    a schema:ListItem ;
-    schema:position 20 ;
-    schema:item <../releases/time_for_payback.ttl#t05> .
-
-<#e21>
-    a schema:ListItem ;
-    schema:position 21 ;
-    schema:item <../releases/time_for_payback.ttl#t06> .
-
-<#e22>
-    a schema:ListItem ;
-    schema:position 22 ;
-    schema:item <../releases/time_for_payback.ttl#t07> .
-
-<#e23>
-    a schema:ListItem ;
-    schema:position 23 ;
-    schema:item <../releases/time_for_payback.ttl#t08> .
-
-<#e24>
-    a schema:ListItem ;
-    schema:position 24 ;
-    schema:item <../releases/time_for_payback.ttl#t09> .
-
-<#e25>
-    a schema:ListItem ;
-    schema:position 25 ;
-    schema:item <../releases/time_for_payback.ttl#t10> .
-
-<#e26>
-    a schema:ListItem ;
-    schema:position 26 ;
-    schema:item <../releases/time_for_payback.ttl#t11> .
-
-<#e27>
-    a schema:ListItem ;
-    schema:position 27 ;
-    schema:item <../releases/time_for_payback.ttl#t12> .
-
-<#e28>
-    a schema:ListItem ;
-    schema:position 28 ;
-    schema:item <../releases/time_for_payback.ttl#t13> .
-
-<#e29>
-    a schema:ListItem ;
-    schema:position 29 ;
-    schema:item <../releases/time_for_payback.ttl#t14> .

@@ -11,7 +11,7 @@
     schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     oa:styleClass "hidden" ;
-    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11>, <#e12>, <#e13> .
+    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11> .
 
 <#e01>
     a schema:ListItem ;
@@ -67,13 +67,3 @@
     a schema:ListItem ;
     schema:position 11 ;
     schema:item <../releases/phoenix_rising.ttl#t11> .
-
-<#e12>
-    a schema:ListItem ;
-    schema:position 12 ;
-    schema:item <../releases/25_1_hits_from_25_years_192_hz_vinyl_rip.ttl#t01> .
-
-<#e13>
-    a schema:ListItem ;
-    schema:position 13 ;
-    schema:item <../releases/25_1_hits_from_25_years_192_hz_vinyl_rip.ttl#t02> .

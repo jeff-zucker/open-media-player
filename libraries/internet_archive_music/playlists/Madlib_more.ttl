@@ -9,38 +9,11 @@
     dct:isPartOf <../playlists.ttl#it>;
     schema:itemListOrder schema:ItemListOrderAscending;
     foaf:maker "jeffz";
-    schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10>, <#e11>, <#e12>, <#e13>, <#e14>, <#e15>, <#e16>, <#e17>, <#e18>, <#e19>, <#e20>, <#e21>, <#e22>, <#e23>, <#e24>, <#e25>, <#e26>, <#e27>, <#e28>, <#e29>, <#e30>, <#e31>, <#e32>, <#e33>, <#e34>;
+    schema:itemListElement <#e01>, <#e11>, <#e12>, <#e13>, <#e14>, <#e15>, <#e16>, <#e17>, <#e18>, <#e19>, <#e20>, <#e21>, <#e22>, <#e23>, <#e24>, <#e25>, <#e26>, <#e27>, <#e28>, <#e29>, <#e30>, <#e31>, <#e32>, <#e33>, <#e34>;
     oa:styleClass "hidden".
 <#e01> a schema:ListItem;
     schema:position 1;
     schema:item <../releases/another_madlib_invazion_podcast.ttl#t01>.
-<#e02> a schema:ListItem;
-    schema:position 2;
-    schema:item <../releases/bad_neighbor.ttl#t01>.
-<#e03> a schema:ListItem;
-    schema:position 3;
-    schema:item <../releases/bad_neighbor.ttl#t02>.
-<#e04> a schema:ListItem;
-    schema:position 4;
-    schema:item <../releases/bad_neighbor.ttl#t03>.
-<#e05> a schema:ListItem;
-    schema:position 5;
-    schema:item <../releases/bad_neighbor.ttl#t04>.
-<#e06> a schema:ListItem;
-    schema:position 6;
-    schema:item <../releases/bad_neighbor.ttl#t05>.
-<#e07> a schema:ListItem;
-    schema:position 7;
-    schema:item <../releases/bad_neighbor.ttl#t06>.
-<#e08> a schema:ListItem;
-    schema:position 8;
-    schema:item <../releases/bad_neighbor.ttl#t07>.
-<#e09> a schema:ListItem;
-    schema:position 9;
-    schema:item <../releases/bad_neighbor.ttl#t08>.
-<#e10> a schema:ListItem;
-    schema:position 10;
-    schema:item <../releases/bad_neighbor.ttl#t09>.
 <#e11> a schema:ListItem;
     schema:position 11;
     schema:item <../releases/bandana_2019.ttl#t01>.

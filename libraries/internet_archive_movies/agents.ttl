@@ -68,10 +68,6 @@
     schema:name "SIGGRAPH";
     dcat:landingPage <https://archive.org/details/siggraph>;
     schema:genre genres:Animation_TV_Shorts.
-<urn:uuid:5264678c-c114-48ee-895e-914822178fd8> a schema:Collection;
-    schema:name "Classic TV Shows";
-    dcat:landingPage <https://archive.org/details/classic_tv_emperor>;
-    schema:genre genres:Animation_TV_Shorts.
 <urn:uuid:e9727055-ef11-4022-b619-c2021fac6957> a schema:Collection;
     schema:name "Classic TV Commercials";
     dcat:landingPage <https://archive.org/details/classic_tv_commercials_emperor>;
@@ -260,10 +256,6 @@
     schema:name "XFR Collective";
     dcat:landingPage <https://archive.org/details/xfrcollective>;
     schema:genre genres:Art.
-<urn:uuid:c5a1405c-beba-49e8-b97d-c1dad602ff0d> a schema:Collection;
-    schema:name "Mood Music Video Archive";
-    dcat:landingPage <https://archive.org/details/moodmusic>;
-    schema:genre genres:Art.
 <urn:uuid:25f4bdee-dea1-4fae-a985-6171a380bbf0> a schema:Collection;
     schema:name "Punkcast";
     dcat:landingPage <https://archive.org/details/punkcast>;
@@ -423,10 +415,6 @@
 <urn:uuid:114f5116-6d7b-4d79-a6c3-23964e53dffb> a schema:Collection;
     schema:name "Jewish Women's Archive – Weaving Women's Words";
     dcat:landingPage <https://archive.org/details/weavingwomenswords>;
-    schema:genre genres:Social_Issues.
-<urn:uuid:221cae30-419b-44ad-9d41-5258ea51ec46> a schema:Collection;
-    schema:name "Sojourner Kincaid Rolle Papers";
-    dcat:landingPage <https://archive.org/details/outrageouswomen>;
     schema:genre genres:Social_Issues.
 <urn:uuid:f58f9d91-b201-4ef8-a02b-797c288d3928> a schema:Collection;
     schema:name "Sierra Club Library";

@@ -12,7 +12,7 @@
   a dcat:Catalog ;
   dct:title "Image collections" ;
   dcat:themeTaxonomy <#Images> ;
-  dcat:dataset <#img-0001> , <#img-0002> , <#img-0003> , <#img-0004> , <#img-0005> , <#img-0006> , <#img-0007> , <#img-0008> , <#img-0009> , <#img-0010> , <#img-0011> , <#img-0012> , <#img-0013> , <#img-0014> , <#img-0015> , <#img-0016> , <#img-0017> , <#img-0018> , <#img-0019> , <#img-0020> , <#img-0021> , <#img-0022> , <#img-0023> , <#img-0024> , <#img-0025> , <#img-0026> , <#img-0027> , <#img-0028> , <#img-0029> , <#img-0030> , <#img-0031> , <#img-0032> , <#img-0033> , <#img-0034> , <#img-0035> , <#img-0036> , <#img-0037> , <#img-0038> , <#img-0039> , <#img-0040> , <#img-0041> , <#img-0042> , <#img-0043> , <#img-0044> , <#img-0045> , <#img-0046> , <#img-0047> , <#img-0048> , <#img-0049> , <#img-0050> , <#img-0051> , <#img-0052> , <#img-0053> , <#img-0054> , <#img-0055> , <#img-0056> , <#img-0057> , <#img-0058> , <#img-0059> , <#img-0060> , <#img-0061> , <#img-0062> , <#img-0063> , <#img-0064> , <#img-0065> , <#img-0066> , <#img-0067> , <#img-0068> , <#img-0069> , <#img-0070> , <#img-0071> , <#img-0072> , <#img-0073> , <#img-0074> , <#img-0075> , <#img-0076> , <#img-0077> , <#img-0078> , <#img-0079> , <#img-0080> , <#img-0081> , <#img-0082> , <#img-0083> , <#img-0084> , <#img-0085> , <#img-0086> , <#img-0087> , <#img-0088> , <#img-0089> , <#img-0090> , <#img-0091> , <#img-0092> , <#img-0093> , <#img-0094> , <#img-0095> , <#img-0096> , <#img-0097> , <#img-0098> , <#img-0099> , <#img-0100> , <#img-0101> , <#img-0102> , <#img-0103> , <#img-0104> , <#img-0105> , <#img-0106> , <#img-0107> , <#img-0108> , <#img-0109> , <#img-0110> , <#img-0111> , <#img-0112> , <#img-0113> , <#img-0114> , <#img-0115> , <#img-0116> , <#img-0117> , <#img-0118> , <#img-0119> , <#img-0120> , <#img-0121> , <#img-0122> , <#img-0123> , <#img-0124> , <#img-0125> , <#img-0126> , <#img-0127> , <#img-0128> , <#img-0129> , <#img-0130> , <#img-0131> , <#img-0132> , <#img-0133> , <#img-0134> , <#img-0135> , <#img-0136> , <#img-0137> , <#img-0138> , <#img-0139> , <#img-0140> , <#img-0141> , <#img-0142> , <#img-0143> , <#img-0144> , <#img-0145> , <#img-0146> , <#img-0147> , <#img-0148> , <#img-0149> , <#img-0150> , <#img-0151> , <#img-0153> , <#img-0154> , <#img-0155> , <#img-0156> , <#img-0157> , <#img-0158> , <#img-0159> , <#img-0160> , <#img-0161> , <#img-0162> , <#img-0164> , <#img-0165> , <#img-0166> , <#img-0167> , <#img-0169> , <#img-0170> , <#img-0171> , <#img-0172> , <#img-0173> , <#img-0174> , <#img-0175> , <#img-0176> , <#img-0177> , <#img-0178> , <#img-0179> , <#img-0180> , <#img-0182> , <#img-0183> , <#img-0184> , <#img-0185> , <#img-0186> , <#img-0187> , <#img-0188> , <#img-0189> , <#img-0190> , <#img-0191> , <#img-0192> , <#img-0193> , <#img-0194> , <#img-0195> , <#img-0196> , <#img-0197> , <#img-0198> , <#img-0199> , <#img-0200> , <#img-0201> , <#img-0202> , <#img-0203> , <#img-0204> , <#img-0205> , <#img-0206> , <#img-0207> , <#img-0208> , <#img-0209> , <#img-0210> , <#img-0211> , <#img-0212> , <#img-0213> , <#img-0214> , <#img-0215> , <#img-0216> , <#img-0217> , <#img-0218> , <#img-0219> , <#img-0220> , <#img-0221> , <#img-0222> , <#img-0223> , <#img-0224> , <#img-0225> , <#img-0226> , <#img-0227> , <#img-0228> , <#img-0229> , <#img-0230> , <#img-0231> , <#img-0232> , <#img-0233> , <#img-0234> , <#img-0235> , <#img-0236> , <#img-0237> , <#img-0238> , <#img-0239> , <#img-0240> , <#img-0241> , <#img-0242> , <#img-0243> , <#img-0244> , <#img-0245> , <#img-0246> , <#img-0248> , <#img-0249> , <#img-0250> , <#img-0251> , <#img-0252> , <#img-0253> , <#img-0254> , <#img-0255> , <#img-0256> , <#img-0257> , <#img-0258> , <#img-0259> , <#img-0260> , <#img-0261> , <#img-0262> , <#img-0263> , <#img-0264> , <#img-0265> , <#img-0266> , <#img-0267> , <#img-0268> , <#img-0269> , <#img-0270> , <#img-0271> , <#img-0272> , <#img-0273> , <#img-0274> , <#img-0275> , <#img-0276> , <#img-0277> , <#img-0278> , <#img-0279> , <#img-0280> , <#img-0281> , <#img-0282> , <#img-0283> , <#img-0284> , <#img-0285> , <#img-0286> , <#img-0287> , <#img-0288> , <#img-0289> , <#img-0290> , <#img-0291> , <#img-0292> , <#img-0293> , <#img-0294> , <#img-0295> , <#img-0296> , <#img-0297> , <#img-0298> , <#img-0299> , <#img-0300> , <#img-0301> , <#img-0302> , <#img-0303> , <#img-0304> , <#img-0305> , <#img-0306> , <#img-0307> , <#img-0308> , <#img-0309> , <#img-0310> , <#img-0311> , <#img-0312> , <#img-0313> , <#img-0314> , <#img-0315> , <#img-0316> , <#img-0317> , <#img-0318> , <#img-0319> , <#img-0320> , <#img-0321> , <#img-0322> , <#img-0323> , <#img-0324> , <#img-0325> , <#img-0326> , <#img-0327> , <#img-0328> , <#img-0329> , <#img-0330> , <#img-0331> , <#img-0332> , <#img-0333> , <#img-0334> , <#img-0335> , <#img-0336> , <#img-0337> , <#img-0338> , <#img-0339> , <#img-0340> , <#img-0341> , <#img-0342> , <#img-0343> , <#img-0344> , <#img-0345> , <#img-0346> , <#img-0347> , <#img-0348> , <#img-0349> , <#img-0350> , <#img-0351> , <#img-0352> , <#img-0353> , <#img-0354> , <#img-0355> , <#img-0356> , <#img-0357> , <#img-0358> , <#img-0359> , <#img-0360> , <#img-0361> , <#img-0362> , <#img-0363> , <#img-0365> , <#img-0366> , <#img-0367> , <#img-0368> , <#img-0369> , <#img-0370> , <#img-0371> , <#img-0372> , <#img-0373> , <#img-0374> , <#img-0375> , <#img-0376> , <#img-0378> , <#img-0381> , <#img-0382> , <#img-0383> , <#img-0384> , <#img-0385> , <#img-0386> , <#img-0388> , <#img-0389> , <#img-0390> , <#img-0394> , <#img-0395> , <#img-0396> , <#img-0397> , <#img-0398> , <#img-0399> , <#img-0400> , <#img-0401> , <#img-0402> , <#img-0403> , <#img-0404> , <#img-0405> , <#img-0406> , <#img-0407> , <#img-0408> , <#img-0409> , <#img-0410> , <#img-0411> , <#img-0412> , <#img-0413> , <#img-0414> , <#img-0415> , <#img-0416> , <#img-0417> , <#img-0418> , <#img-0419> , <#img-0420> , <#img-0421> , <#img-0422> , <#img-0423> , <#img-0424> , <#img-0425> , <#img-0426> , <#img-0427> , <#img-0428> , <#img-0429> , <#img-0430> , <#img-0431> , <#img-0432> , <#img-0433> , <#img-0434> , <#img-0435> , <#img-0436> , <#img-0437> , <#img-0438> , <#img-0439> , <#img-0440> , <#img-0441> , <#img-0442> , <#img-0443> , <#img-0444> , <#img-0445> , <#img-0446> , <#img-0447> , <#img-0448> , <#img-0449> , <#img-0450> , <#img-0451> , <#img-0452> , <#img-0453> , <#img-0454> , <#img-0455> , <#img-0456> , <#img-0457> , <#img-0458> , <#img-0459> , <#img-0460> , <#img-0461> , <#img-0462> , <#img-0463> , <#img-0464> , <#img-0465> , <#img-0466> , <#img-0467> , <#img-0468> , <#img-0469> , <#img-0470> , <#img-0471> , <#img-0472> , <#img-0473> , <#img-0474> , <#img-0475> , <#img-0476> , <#img-0477> , <#img-0478> , <#img-0479> , <#img-0480> , <#img-0481> , <#img-0482> , <#img-0483> , <#img-0484> , <#img-0485> , <#img-0486> , <#img-0487> , <#img-0488> , <#img-0489> , <#img-0490> , <#img-0491> , <#img-0492> , <#img-0493> , <#img-0494> , <#img-0495> , <#img-0496> , <#img-0497> , <#img-0498> , <#img-0499> , <#img-0500> , <#img-0501> , <#img-0502> , <#img-0503> , <#img-0504> , <#img-0505> , <#img-0506> , <#img-0507> , <#img-0508> , <#img-0509> , <#img-0510> , <#img-0511> , <#img-0512> , <#img-0513> , <#img-0514> , <#img-0515> , <#img-0516> , <#img-0517> , <#img-0518> , <#img-0519> , <#img-0520> , <#img-0521> , <#img-0522> , <#img-0523> , <#img-0524> , <#img-0525> , <#img-0526> , <#img-0527> , <#img-0530> , <#img-0531> , <#img-0532> , <#img-0533> , <#img-0534> , <#img-0535> , <#img-0536> , <#img-0537> , <#img-0538> , <#img-0539> , <#img-0540> , <#img-0541> , <#img-0542> , <#img-0543> , <#img-0544> , <#img-0545> , <#img-0546> , <#img-0547> , <#img-0548> , <#img-0549> , <#img-0550> , <#img-0551> , <#img-0552> , <#img-0553> , <#img-0554> , <#img-0555> , <#img-0556> , <#img-0557> , <#img-0558> , <#img-0559> , <#img-0560> , <#img-0561> , <#img-0562> , <#img-0563> , <#img-0564> , <#img-0565> , <#img-0566> , <#img-0567> , <#img-0568> , <#img-0569> , <#img-0570> , <#img-0571> , <#img-0572> , <#img-0573> , <#img-0574> , <#img-0575> , <#img-0576> , <#img-0577> , <#img-0578> , <#img-0579> , <#img-0580> , <#img-0581> , <#img-0582> , <#img-0583> , <#img-0584> , <#img-0585> , <#img-0586> , <#img-0587> , <#img-0588> , <#img-0589> , <#img-0590> , <#img-0591> , <#img-0592> , <#img-0593> , <#img-0594> , <#img-0595> , <#img-0596> , <#img-0597> , <#img-0598> , <#img-0599> , <#img-0600> , <#img-0601> , <#img-0602> , <#img-0603> , <#img-0604> , <#img-0605> , <#img-0606> , <#img-0607> , <#img-0608> , <#img-0609> , <#img-0610> , <#img-0611> , <#img-0612> , <#img-0613> , <#img-0614> , <#img-0615> , <#img-0616> , <#img-0617> , <#img-0618> , <#img-0619> , <#img-0620> , <#img-0621> , <#img-0622> , <#img-0623> , <#img-0624> , <#img-0625> , <#img-0626> , <#img-0627> , <#img-0628> , <#img-0629> , <#img-0630> , <#img-0631> , <#img-0632> , <#img-0633> , <#img-0634> , <#img-0635> , <#img-0636> , <#img-0637> , <#img-0638> , <#img-0639> , <#img-0640> , <#img-0641> , <#img-0642> , <#img-0644> , <#img-0645> , <#img-0646> , <#img-0647> , <#img-0648> , <#img-0649> , <#img-0650> , <#img-0651> , <#img-0652> , <#img-0653> , <#img-0654> , <#img-0655> , <#img-0656> , <#img-0657> , <#img-0658> , <#img-0659> , <#img-0660> , <#img-0661> , <#img-0662> , <#img-0663> , <#img-0664> , <#img-0665> , <#img-0666> , <#img-0667> , <#img-0668> , <#img-0669> , <#img-0670> , <#img-0671> , <#img-0672> , <#img-0673> , <#img-0674> , <#img-0675> , <#img-0676> , <#img-0677> , <#img-0678> , <#img-0679> , <#img-0680> , <#img-0681> , <#img-0682> , <#img-0683> , <#img-0684> , <#img-0685> , <#img-0686> , <#img-0687> , <#img-0688> , <#img-0689> , <#img-0690> , <#img-0691> , <#img-0692> , <#img-0693> , <#img-0694> , <#img-0695> , <#img-0696> , <#img-0697> , <#img-0698> , <#img-0699> , <#img-0700> , <#img-0701> , <#img-0702> , <#img-0703> , <#img-0704> , <#img-0705> , <#img-0706> , <#img-0707> , <#img-0708> , <#img-0709> , <#img-0710> , <#img-0711> , <#img-0713> , <#img-0714> , <#img-0715> , <#img-0716> , <#img-0717> , <#img-0718> , <#img-0719> , <#img-0720> , <#img-0721> , <#img-0722> , <#img-0723> , <#img-0724> , <#img-0725> , <#img-0726> , <#img-0727> , <#img-0728> , <#img-0729> , <#img-0730> , <#img-0731> , <#img-0732> , <#img-0733> , <#img-0734> , <#img-0735> , <#img-0736> , <#img-0737> , <#img-0738> , <#img-0739> , <#img-0740> , <#img-0741> , <#img-0742> , <#img-0743> , <#img-0744> , <#img-0745> , <#img-0746> , <#img-0747> , <#img-0748> , <#img-0749> , <#img-0750> , <#img-0751> , <#img-0752> , <#img-0753> , <#img-0754> , <#img-0755> , <#img-0756> , <#img-0757> , <#img-0758> .
+  dcat:dataset <#img-0001> , <#img-0002> , <#img-0003> , <#img-0004> , <#img-0005> , <#img-0006> , <#img-0008> , <#img-0009> , <#img-0010> , <#img-0011> , <#img-0012> , <#img-0013> , <#img-0014> , <#img-0015> , <#img-0016> , <#img-0017> , <#img-0018> , <#img-0019> , <#img-0020> , <#img-0021> , <#img-0022> , <#img-0023> , <#img-0025> , <#img-0026> , <#img-0027> , <#img-0028> , <#img-0029> , <#img-0030> , <#img-0031> , <#img-0032> , <#img-0033> , <#img-0034> , <#img-0035> , <#img-0036> , <#img-0037> , <#img-0038> , <#img-0039> , <#img-0040> , <#img-0041> , <#img-0042> , <#img-0043> , <#img-0044> , <#img-0045> , <#img-0046> , <#img-0047> , <#img-0048> , <#img-0049> , <#img-0050> , <#img-0051> , <#img-0052> , <#img-0053> , <#img-0054> , <#img-0055> , <#img-0056> , <#img-0057> , <#img-0058> , <#img-0059> , <#img-0060> , <#img-0061> , <#img-0062> , <#img-0063> , <#img-0064> , <#img-0065> , <#img-0066> , <#img-0067> , <#img-0068> , <#img-0069> , <#img-0070> , <#img-0072> , <#img-0073> , <#img-0074> , <#img-0075> , <#img-0077> , <#img-0078> , <#img-0079> , <#img-0080> , <#img-0081> , <#img-0082> , <#img-0084> , <#img-0085> , <#img-0086> , <#img-0087> , <#img-0088> , <#img-0089> , <#img-0091> , <#img-0092> , <#img-0094> , <#img-0095> , <#img-0096> , <#img-0097> , <#img-0098> , <#img-0099> , <#img-0100> , <#img-0101> , <#img-0102> , <#img-0103> , <#img-0104> , <#img-0105> , <#img-0106> , <#img-0107> , <#img-0108> , <#img-0109> , <#img-0110> , <#img-0111> , <#img-0112> , <#img-0113> , <#img-0114> , <#img-0115> , <#img-0116> , <#img-0117> , <#img-0118> , <#img-0119> , <#img-0120> , <#img-0121> , <#img-0122> , <#img-0123> , <#img-0125> , <#img-0126> , <#img-0127> , <#img-0128> , <#img-0129> , <#img-0131> , <#img-0132> , <#img-0133> , <#img-0135> , <#img-0137> , <#img-0138> , <#img-0139> , <#img-0140> , <#img-0141> , <#img-0142> , <#img-0143> , <#img-0144> , <#img-0145> , <#img-0146> , <#img-0147> , <#img-0148> , <#img-0149> , <#img-0150> , <#img-0151> , <#img-0153> , <#img-0154> , <#img-0156> , <#img-0157> , <#img-0158> , <#img-0159> , <#img-0160> , <#img-0161> , <#img-0162> , <#img-0164> , <#img-0165> , <#img-0166> , <#img-0167> , <#img-0169> , <#img-0170> , <#img-0171> , <#img-0172> , <#img-0173> , <#img-0174> , <#img-0175> , <#img-0176> , <#img-0177> , <#img-0178> , <#img-0179> , <#img-0180> , <#img-0182> , <#img-0183> , <#img-0184> , <#img-0185> , <#img-0186> , <#img-0187> , <#img-0188> , <#img-0189> , <#img-0190> , <#img-0191> , <#img-0192> , <#img-0194> , <#img-0195> , <#img-0196> , <#img-0198> , <#img-0199> , <#img-0201> , <#img-0202> , <#img-0203> , <#img-0205> , <#img-0206> , <#img-0207> , <#img-0208> , <#img-0210> , <#img-0211> , <#img-0212> , <#img-0213> , <#img-0214> , <#img-0215> , <#img-0216> , <#img-0217> , <#img-0218> , <#img-0219> , <#img-0220> , <#img-0221> , <#img-0222> , <#img-0223> , <#img-0224> , <#img-0225> , <#img-0226> , <#img-0227> , <#img-0229> , <#img-0230> , <#img-0231> , <#img-0232> , <#img-0233> , <#img-0234> , <#img-0236> , <#img-0237> , <#img-0238> , <#img-0239> , <#img-0240> , <#img-0241> , <#img-0242> , <#img-0243> , <#img-0244> , <#img-0245> , <#img-0248> , <#img-0249> , <#img-0250> , <#img-0251> , <#img-0252> , <#img-0253> , <#img-0254> , <#img-0255> , <#img-0256> , <#img-0257> , <#img-0258> , <#img-0259> , <#img-0260> , <#img-0261> , <#img-0262> , <#img-0264> , <#img-0265> , <#img-0266> , <#img-0267> , <#img-0270> , <#img-0271> , <#img-0272> , <#img-0273> , <#img-0274> , <#img-0275> , <#img-0277> , <#img-0278> , <#img-0279> , <#img-0280> , <#img-0281> , <#img-0282> , <#img-0283> , <#img-0284> , <#img-0285> , <#img-0286> , <#img-0287> , <#img-0288> , <#img-0289> , <#img-0290> , <#img-0291> , <#img-0292> , <#img-0294> , <#img-0295> , <#img-0296> , <#img-0297> , <#img-0298> , <#img-0299> , <#img-0300> , <#img-0301> , <#img-0302> , <#img-0303> , <#img-0304> , <#img-0305> , <#img-0306> , <#img-0307> , <#img-0308> , <#img-0309> , <#img-0310> , <#img-0311> , <#img-0312> , <#img-0313> , <#img-0314> , <#img-0315> , <#img-0316> , <#img-0317> , <#img-0318> , <#img-0319> , <#img-0320> , <#img-0321> , <#img-0322> , <#img-0323> , <#img-0324> , <#img-0325> , <#img-0326> , <#img-0327> , <#img-0328> , <#img-0329> , <#img-0330> , <#img-0331> , <#img-0332> , <#img-0333> , <#img-0334> , <#img-0335> , <#img-0336> , <#img-0337> , <#img-0338> , <#img-0339> , <#img-0341> , <#img-0342> , <#img-0343> , <#img-0344> , <#img-0345> , <#img-0346> , <#img-0348> , <#img-0349> , <#img-0350> , <#img-0351> , <#img-0352> , <#img-0353> , <#img-0354> , <#img-0355> , <#img-0356> , <#img-0357> , <#img-0358> , <#img-0359> , <#img-0360> , <#img-0361> , <#img-0362> , <#img-0363> , <#img-0365> , <#img-0366> , <#img-0367> , <#img-0368> , <#img-0369> , <#img-0370> , <#img-0371> , <#img-0372> , <#img-0373> , <#img-0374> , <#img-0375> , <#img-0376> , <#img-0378> , <#img-0382> , <#img-0383> , <#img-0384> , <#img-0386> , <#img-0388> , <#img-0389> , <#img-0390> , <#img-0394> , <#img-0395> , <#img-0396> , <#img-0397> , <#img-0398> , <#img-0399> , <#img-0400> , <#img-0401> , <#img-0402> , <#img-0403> , <#img-0404> , <#img-0405> , <#img-0407> , <#img-0408> , <#img-0409> , <#img-0410> , <#img-0411> , <#img-0412> , <#img-0413> , <#img-0414> , <#img-0415> , <#img-0416> , <#img-0417> , <#img-0418> , <#img-0419> , <#img-0420> , <#img-0421> , <#img-0423> , <#img-0424> , <#img-0425> , <#img-0426> , <#img-0427> , <#img-0428> , <#img-0429> , <#img-0430> , <#img-0431> , <#img-0432> , <#img-0433> , <#img-0434> , <#img-0435> , <#img-0436> , <#img-0437> , <#img-0438> , <#img-0439> , <#img-0440> , <#img-0441> , <#img-0442> , <#img-0443> , <#img-0444> , <#img-0445> , <#img-0446> , <#img-0447> , <#img-0448> , <#img-0449> , <#img-0450> , <#img-0452> , <#img-0453> , <#img-0454> , <#img-0455> , <#img-0456> , <#img-0457> , <#img-0458> , <#img-0459> , <#img-0460> , <#img-0461> , <#img-0462> , <#img-0463> , <#img-0464> , <#img-0465> , <#img-0466> , <#img-0467> , <#img-0468> , <#img-0469> , <#img-0470> , <#img-0471> , <#img-0472> , <#img-0473> , <#img-0474> , <#img-0475> , <#img-0476> , <#img-0477> , <#img-0479> , <#img-0480> , <#img-0481> , <#img-0482> , <#img-0483> , <#img-0484> , <#img-0485> , <#img-0486> , <#img-0487> , <#img-0488> , <#img-0489> , <#img-0490> , <#img-0491> , <#img-0492> , <#img-0493> , <#img-0494> , <#img-0495> , <#img-0496> , <#img-0497> , <#img-0498> , <#img-0499> , <#img-0500> , <#img-0501> , <#img-0502> , <#img-0503> , <#img-0504> , <#img-0505> , <#img-0506> , <#img-0507> , <#img-0508> , <#img-0509> , <#img-0510> , <#img-0511> , <#img-0512> , <#img-0513> , <#img-0515> , <#img-0516> , <#img-0517> , <#img-0518> , <#img-0519> , <#img-0522> , <#img-0523> , <#img-0524> , <#img-0525> , <#img-0527> , <#img-0530> , <#img-0531> , <#img-0532> , <#img-0533> , <#img-0534> , <#img-0535> , <#img-0536> , <#img-0537> , <#img-0538> , <#img-0539> , <#img-0540> , <#img-0541> , <#img-0542> , <#img-0543> , <#img-0544> , <#img-0545> , <#img-0546> , <#img-0548> , <#img-0549> , <#img-0550> , <#img-0551> , <#img-0552> , <#img-0553> , <#img-0554> , <#img-0555> , <#img-0556> , <#img-0557> , <#img-0558> , <#img-0559> , <#img-0560> , <#img-0562> , <#img-0563> , <#img-0564> , <#img-0565> , <#img-0566> , <#img-0567> , <#img-0568> , <#img-0569> , <#img-0570> , <#img-0571> , <#img-0572> , <#img-0573> , <#img-0574> , <#img-0575> , <#img-0576> , <#img-0577> , <#img-0578> , <#img-0579> , <#img-0580> , <#img-0581> , <#img-0583> , <#img-0584> , <#img-0585> , <#img-0586> , <#img-0587> , <#img-0588> , <#img-0589> , <#img-0590> , <#img-0591> , <#img-0592> , <#img-0593> , <#img-0594> , <#img-0595> , <#img-0596> , <#img-0597> , <#img-0598> , <#img-0599> , <#img-0600> , <#img-0601> , <#img-0602> , <#img-0603> , <#img-0604> , <#img-0605> , <#img-0606> , <#img-0607> , <#img-0608> , <#img-0609> , <#img-0611> , <#img-0612> , <#img-0613> , <#img-0614> , <#img-0615> , <#img-0616> , <#img-0617> , <#img-0618> , <#img-0619> , <#img-0620> , <#img-0621> , <#img-0622> , <#img-0623> , <#img-0624> , <#img-0626> , <#img-0627> , <#img-0628> , <#img-0629> , <#img-0630> , <#img-0631> , <#img-0632> , <#img-0633> , <#img-0634> , <#img-0635> , <#img-0636> , <#img-0637> , <#img-0638> , <#img-0639> , <#img-0640> , <#img-0641> , <#img-0642> , <#img-0644> , <#img-0645> , <#img-0646> , <#img-0647> , <#img-0648> , <#img-0649> , <#img-0650> , <#img-0651> , <#img-0652> , <#img-0653> , <#img-0654> , <#img-0655> , <#img-0656> , <#img-0657> , <#img-0658> , <#img-0659> , <#img-0660> , <#img-0661> , <#img-0662> , <#img-0663> , <#img-0664> , <#img-0665> , <#img-0667> , <#img-0668> , <#img-0669> , <#img-0670> , <#img-0671> , <#img-0672> , <#img-0673> , <#img-0674> , <#img-0675> , <#img-0676> , <#img-0677> , <#img-0678> , <#img-0679> , <#img-0680> , <#img-0681> , <#img-0682> , <#img-0683> , <#img-0684> , <#img-0685> , <#img-0687> , <#img-0688> , <#img-0689> , <#img-0690> , <#img-0691> , <#img-0692> , <#img-0693> , <#img-0694> , <#img-0695> , <#img-0696> , <#img-0697> , <#img-0698> , <#img-0699> , <#img-0700> , <#img-0701> , <#img-0702> , <#img-0703> , <#img-0704> , <#img-0705> , <#img-0706> , <#img-0707> , <#img-0708> , <#img-0709> , <#img-0710> , <#img-0711> , <#img-0713> , <#img-0714> , <#img-0715> , <#img-0716> , <#img-0717> , <#img-0718> , <#img-0719> , <#img-0720> , <#img-0721> , <#img-0722> , <#img-0723> , <#img-0724> , <#img-0725> , <#img-0726> , <#img-0727> , <#img-0728> , <#img-0729> , <#img-0730> , <#img-0731> , <#img-0732> , <#img-0733> , <#img-0735> , <#img-0736> , <#img-0738> , <#img-0741> , <#img-0742> , <#img-0743> , <#img-0744> , <#img-0745> , <#img-0746> , <#img-0747> , <#img-0748> , <#img-0749> , <#img-0750> , <#img-0751> , <#img-0752> , <#img-0753> , <#img-0754> , <#img-0755> , <#img-0756> , <#img-0757> .
 
 # ── topics (skos:ConceptScheme) ──
 <#Images> a skos:ConceptScheme ; skos:prefLabel "Images" .
@@ -67,11 +67,6 @@
   dct:title "Street painting" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Street_painting> ;
   dcat:theme <#Graffiti_Sticker_Art> .
-<#img-0130>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Banksy unconfirmed" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Banksy_unconfirmed> ;
-  dcat:theme <#Graffiti_Sticker_Art> .
 <#img-0131>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Dismaland" ;
@@ -87,20 +82,10 @@
   dct:title "Banksy in New Orleans" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Banksy_in_New_Orleans> ;
   dcat:theme <#Graffiti_Sticker_Art> .
-<#img-0134>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Banksy in Palestine" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Banksy_in_Palestine> ;
-  dcat:theme <#Graffiti_Sticker_Art> .
 <#img-0135>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Sticker art in São Paulo city" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Sticker_art_in_S%C3%A3o_Paulo_city> ;
-  dcat:theme <#Graffiti_Sticker_Art> .
-<#img-0136>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Sticker art of Poland" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Sticker_art_of_Poland> ;
   dcat:theme <#Graffiti_Sticker_Art> .
 <#img-0137>
   a dcat:Dataset, schema:ImageGallery ;
@@ -148,11 +133,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Jules Allen" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Jules_Allen> ;
-  dcat:theme <#African_American_Artists> .
-<#img-0155>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Wil Blanche" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Wil_Blanche> ;
   dcat:theme <#African_American_Artists> .
 <#img-0156>
   a dcat:Dataset, schema:ImageGallery ;
@@ -241,11 +221,6 @@
   dcat:theme <#African_American_Artists> .
 
 # Frida Kahlo & Diego Rivera
-<#img-0204>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Collections of the Anahucalli Museum" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Collections_of_the_Anahucalli_Museum> ;
-  dcat:theme <#Frida_Kahlo_Diego_Rivera> .
 <#img-0205>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Diego Rivera Mural Museum" ;
@@ -265,11 +240,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Murals by Diego Rivera in the Palacio Nacional" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Murals_by_Diego_Rivera_in_the_Palacio_Nacional> ;
-  dcat:theme <#Frida_Kahlo_Diego_Rivera> .
-<#img-0209>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Murals by Diego Rivera in the Secretaria de Educacion Publico" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Murals_by_Diego_Rivera_in_the_Secretaria_de_Educacion_Publico> ;
   dcat:theme <#Frida_Kahlo_Diego_Rivera> .
 <#img-0210>
   a dcat:Dataset, schema:ImageGallery ;
@@ -365,11 +335,6 @@
   dcat:theme <#Tattoos> .
 
 # Puppets
-<#img-0228>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Shadow puppets in the Sichuan Provincial Museum" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Shadow_puppets_in_the_Sichuan_Provincial_Museum> ;
-  dcat:theme <#Puppets> .
 <#img-0229>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Marionettes from Germany" ;
@@ -399,11 +364,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Théatre lyonnais de Guignol" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Th%C3%A9atre_lyonnais_de_Guignol> ;
-  dcat:theme <#Puppets> .
-<#img-0235>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Lin Liu-hsin Puppet Theatre Museum" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Lin_Liu-hsin_Puppet_Theatre_Museum> ;
   dcat:theme <#Puppets> .
 <#img-0236>
   a dcat:Dataset, schema:ImageGallery ;
@@ -455,13 +415,6 @@
   dct:title "Marottes" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Marottes> ;
   dcat:theme <#Puppets> .
-<#img-0246>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Museo Nacional del Títere (National Puppet Museum), Huamantla" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Museo_Nacional_del_T%C3%ADtere_(National_Puppet_Museum),_Huamantla> ;
-  dcat:theme <#Puppets> .
-
-# Illuminated Manuscripts
 <#img-0304>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Caedmon manuscript" ;
@@ -664,11 +617,6 @@
   dct:title "Photographs by Gallen-Kallelan Museo" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Photographs_by_Gallen-Kallelan_Museo> ;
   dcat:theme <#Photographic_Collections> .
-<#img-0007>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Photographs in the Getty Center" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Photographs_in_the_Getty_Center> ;
-  dcat:theme <#Photographic_Collections> .
 <#img-0008>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Photographs by Het Nieuwe Instituut" ;
@@ -749,11 +697,6 @@
   dct:title "Photographs by Cornell University Library" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Photographs_by_Cornell_University_Library> ;
   dcat:theme <#Photographic_Collections> .
-<#img-0024>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Photographs by New York Public Library" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Photographs_by_New_York_Public_Library> ;
-  dcat:theme <#Photographic_Collections> .
 <#img-0025>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Photographs by Schlesinger Library for the Black Women Oral History Project" ;
@@ -806,11 +749,6 @@
   dct:title "Prints by Utagawa Hiroshige (I) in the Rijksmuseum Amsterdam" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Prints_by_Utagawa_Hiroshige_(I)_in_the_Rijksmuseum_Amsterdam> ;
   dcat:theme <#Japanese_Prints> .
-<#img-0381>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Suzuki Harunobu (Tokyo National Museum)" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Suzuki_Harunobu_(Tokyo_National_Museum)> ;
-  dcat:theme <#Japanese_Prints> .
 <#img-0382>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Prints of 36 Views of Mount Fuji" ;
@@ -825,11 +763,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Eishōsai Chōki" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Eish%C5%8Dsai_Ch%C5%8Dki> ;
-  dcat:theme <#Japanese_Prints> .
-<#img-0385>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Hishikawa Moronobu" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Hishikawa_Moronobu> ;
   dcat:theme <#Japanese_Prints> .
 <#img-0386>
   a dcat:Dataset, schema:ImageGallery ;
@@ -910,11 +843,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Totoya Hokkei" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Totoya_Hokkei> ;
-  dcat:theme <#Japanese_Prints> .
-<#img-0406>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Ishikawa Toyonobu" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Ishikawa_Toyonobu> ;
   dcat:theme <#Japanese_Prints> .
 <#img-0407>
   a dcat:Dataset, schema:ImageGallery ;
@@ -1095,11 +1023,6 @@
   dct:title "Courir de Mardi Gras" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Courir_de_Mardi_Gras> ;
   dcat:theme <#Masks_-_Americas_Europe> .
-<#img-0478>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "1961 Ptuj Carnival" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:1961_Ptuj_Carnival> ;
-  dcat:theme <#Masks_-_Americas_Europe> .
 <#img-0479>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Kukeri masks" ;
@@ -1226,11 +1149,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Marcel Duchamp" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Marcel_Duchamp> ;
-  dcat:theme <#Dada_Surrealism> .
-<#img-0686>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Marcel Duchamp's fontaine" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Marcel_Duchamp%27s_fontaine> ;
   dcat:theme <#Dada_Surrealism> .
 <#img-0687>
   a dcat:Dataset, schema:ImageGallery ;
@@ -1359,16 +1277,6 @@
   dcat:theme <#Dada_Surrealism> .
 
 # Weaving Textiles
-<#img-0739>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Maori weaving" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Maori_weaving> ;
-  dcat:theme <#Weaving_Textiles> .
-<#img-0740>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Weaving in Côte d'Ivoire" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Weaving_in_C%C3%B4te_d%27Ivoire> ;
-  dcat:theme <#Weaving_Textiles> .
 <#img-0741>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Weavers in East Timor" ;
@@ -1454,13 +1362,6 @@
   dct:title "Navajo blankets" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Navajo_blankets> ;
   dcat:theme <#Weaving_Textiles> .
-<#img-0758>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Navajo rug" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Navajo_rug> ;
-  dcat:theme <#Weaving_Textiles> .
-
-# Chinese Paintings
 <#img-0029>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Paintings from China in the Freer Gallery" ;
@@ -1677,11 +1578,6 @@
   dct:title "19th-century Mughal miniatures" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:19th-century_Mughal_miniatures> ;
   dcat:theme <#Mughal_Rajput_Painting> .
-<#img-0071>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Mughal painters" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Mughal_painters> ;
-  dcat:theme <#Mughal_Rajput_Painting> .
 <#img-0072>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Mughal miniatures in the Walters Art Museum" ;
@@ -1701,11 +1597,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Kishangarh painting" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Kishangarh_painting> ;
-  dcat:theme <#Mughal_Rajput_Painting> .
-<#img-0076>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Kotah painting" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Kotah_painting> ;
   dcat:theme <#Mughal_Rajput_Painting> .
 <#img-0077>
   a dcat:Dataset, schema:ImageGallery ;
@@ -1789,11 +1680,6 @@
   dct:title "Black Power Salute at 1968 Olympics" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Black_Power_Salute_at_1968_Olympics> ;
   dcat:theme <#Activism> .
-<#img-0263>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Brown v. Board of Education National Historic Site" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Brown_v._Board_of_Education_National_Historic_Site> ;
-  dcat:theme <#Activism> .
 <#img-0264>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Selma to Montgomery marches" ;
@@ -1813,16 +1699,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Stand Up for Trans Youth rally in New York City" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Stand_Up_for_Trans_Youth_rally_in_New_York_City> ;
-  dcat:theme <#Activism> .
-<#img-0268>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Girls just wanna have fun-damental rights" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Girls_just_wanna_have_fun-damental_rights> ;
-  dcat:theme <#Activism> .
-<#img-0269>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Bangalore rape protests" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Bangalore_rape_protests> ;
   dcat:theme <#Activism> .
 <#img-0270>
   a dcat:Dataset, schema:ImageGallery ;
@@ -1854,13 +1730,6 @@
   dct:title "Derivative works on We Can Do It" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Derivative_works_on_We_Can_Do_It> ;
   dcat:theme <#Activism> .
-<#img-0276>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Rosie the Riveter/World War II Home Front National Historical Park" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Rosie_the_Riveter/World_War_II_Home_Front_National_Historical_Park> ;
-  dcat:theme <#Activism> .
-
-# Activists
 <#img-0277>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Michelle Alexander" ;
@@ -1940,11 +1809,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Rosa Parks bus" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Rosa_Parks_bus> ;
-  dcat:theme <#Activists> .
-<#img-0293>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Photographs of Sojourner Truth" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Photographs_of_Sojourner_Truth> ;
   dcat:theme <#Activists> .
 <#img-0294>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2083,11 +1947,6 @@
   dct:title "2007 Writers Guild of America strike" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:2007_Writers_Guild_of_America_strike> ;
   dcat:theme <#Unions> .
-<#img-0514>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Writer's Guild of America East Solidarity Rally in Washington Square" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Writer%27s_Guild_of_America_East_Solidarity_Rally_in_Washington_Square> ;
-  dcat:theme <#Unions> .
 <#img-0515>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "2011 Oakland general strike" ;
@@ -2113,16 +1972,6 @@
   dct:title "Members of the Industrial Workers of the World" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Members_of_the_Industrial_Workers_of_the_World> ;
   dcat:theme <#Unions> .
-<#img-0520>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Centralia Massacre" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Centralia_Massacre> ;
-  dcat:theme <#Unions> .
-<#img-0521>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "1921 General Strike (Norway) e (Washington)" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:1921_General_Strike_(Norway)_e_(Washington)> ;
-  dcat:theme <#Unions> .
 <#img-0522>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Red Emma's Bookstore Coffeehouse" ;
@@ -2142,11 +1991,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Mother Jones" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Mother_Jones> ;
-  dcat:theme <#Unions> .
-<#img-0526>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Picketing in Kiev: March 27, 2014" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Picketing_in_Kiev:_March_27,_2014> ;
   dcat:theme <#Unions> .
 <#img-0527>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2214,11 +2058,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Homeless people of Israel" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Homeless_people_of_Israel> ;
-  dcat:theme <#Hobos_Houseless_Street_Kids> .
-<#img-0582>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Homeless in Tokyo" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Homeless_in_Tokyo> ;
   dcat:theme <#Hobos_Houseless_Street_Kids> .
 <#img-0583>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2342,11 +2181,6 @@
   dct:title "Partition of India refugees" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Partition_of_India_refugees> ;
   dcat:theme <#Refugees> .
-<#img-0666>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Internally displaced persons in Iraq" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Internally_displaced_persons_in_Iraq> ;
-  dcat:theme <#Refugees> .
 <#img-0667>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Refugee camps in Iraq" ;
@@ -2434,11 +2268,6 @@
   dct:title "Tarot de Marseille - Jean Dodal" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Tarot_de_Marseille_-_Jean_Dodal> ;
   dcat:theme <#Tarot_Decks> .
-<#img-0083>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Tarot de Marseille - Noblet" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Tarot_de_Marseille_-_Noblet> ;
-  dcat:theme <#Tarot_Decks> .
 <#img-0084>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Minchiate card deck - Florence - 1860-1890" ;
@@ -2469,11 +2298,6 @@
   dct:title "Tarot nouveau - Grimaud - 1898" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Tarot_nouveau_-_Grimaud_-_1898> ;
   dcat:theme <#Tarot_Decks> .
-<#img-0090>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Oswald Wirth Tarot - The Tarot of the Magicians version" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Oswald_Wirth_Tarot_-_The_Tarot_of_the_Magicians_version> ;
-  dcat:theme <#Tarot_Decks> .
 <#img-0091>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Papus Tarot 1909" ;
@@ -2483,11 +2307,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Piedmontese tarot deck - Solesio - 1865" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Piedmontese_tarot_deck_-_Solesio_-_1865> ;
-  dcat:theme <#Tarot_Decks> .
-<#img-0093>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Brera-Brambilla Visconti Tarot" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Brera-Brambilla_Visconti_Tarot> ;
   dcat:theme <#Tarot_Decks> .
 <#img-0094>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2605,11 +2424,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Temperance (Major Arcana)" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Temperance_(Major_Arcana)> ;
-  dcat:theme <#Tarot_Major_Arcana> .
-<#img-0124>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Theological virtues (Major Arcana)" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Theological_virtues_(Major_Arcana)> ;
   dcat:theme <#Tarot_Major_Arcana> .
 <#img-0125>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2755,11 +2569,6 @@
   dct:title "The Flying Karamazov Brothers" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:The_Flying_Karamazov_Brothers> ;
   dcat:theme <#Circus> .
-<#img-0193>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Maori poi" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Maori_poi> ;
-  dcat:theme <#Circus> .
 <#img-0194>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Beijing Chinese-Yo-Yo Museum" ;
@@ -2775,11 +2584,6 @@
   dct:title "Torch juggling" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Torch_juggling> ;
   dcat:theme <#Circus> .
-<#img-0197>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Two jugglers" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Two_jugglers> ;
-  dcat:theme <#Circus> .
 <#img-0198>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Coney Island Mermaid Parade 2012" ;
@@ -2789,11 +2593,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Jacques de Falaise" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Jacques_de_Falaise> ;
-  dcat:theme <#Circus> .
-<#img-0200>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Majorettes from Croatia" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Majorettes_from_Croatia> ;
   dcat:theme <#Circus> .
 <#img-0201>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2821,11 +2620,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Florence 114106" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Florence_114106> ;
-  dcat:theme <#Legendary_Women_Warriors> .
-<#img-0340>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Wounded Amazon tipo Mattei (Musei Capitolini)" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Wounded_Amazon_tipo_Mattei_(Musei_Capitolini)> ;
   dcat:theme <#Legendary_Women_Warriors> .
 <#img-0341>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2856,11 +2650,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "La Pucelle d'Orléans" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:La_Pucelle_d%27Orl%C3%A9ans> ;
-  dcat:theme <#Legendary_Women_Warriors> .
-<#img-0347>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Jeanne d'Arc in posters and photos" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Jeanne_d%27Arc_in_posters_and_photos> ;
   dcat:theme <#Legendary_Women_Warriors> .
 <#img-0348>
   a dcat:Dataset, schema:ImageGallery ;
@@ -2954,11 +2743,6 @@
   dct:title "Fedoras" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Fedoras> ;
   dcat:theme <#Hats> .
-<#img-0547>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Fez" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Fez> ;
-  dcat:theme <#Hats> .
 <#img-0548>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Hard hats" ;
@@ -3023,11 +2807,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Sombreros" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Sombreros> ;
-  dcat:theme <#Hats> .
-<#img-0561>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Sou'wester" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Sou%27wester> ;
   dcat:theme <#Hats> .
 <#img-0562>
   a dcat:Dataset, schema:ImageGallery ;
@@ -3191,11 +2970,6 @@
   dct:title "Handcuff knots" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Handcuff_knots> ;
   dcat:theme <#Knots> .
-<#img-0610>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Gordian knot" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Gordian_knot> ;
-  dcat:theme <#Knots> .
 <#img-0611>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Fisherman's knots" ;
@@ -3265,11 +3039,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Knots in heraldry" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Knots_in_heraldry> ;
-  dcat:theme <#Knots> .
-<#img-0625>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Knot on Jewish gravestones" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Knot_on_Jewish_gravestones> ;
   dcat:theme <#Knots> .
 <#img-0626>
   a dcat:Dataset, schema:ImageGallery ;
@@ -3514,11 +3283,6 @@
   dcat:theme <#Aloes> .
 
 # Waterfalls
-<#img-0422>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Cascata do Véu da Noiva" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Cascata_do_V%C3%A9u_da_Noiva> ;
-  dcat:theme <#Waterfalls> .
 <#img-0423>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "McWay Falls" ;
@@ -3659,11 +3423,6 @@
   dct:title "Düden Waterfalls" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:D%C3%BCden_Waterfalls> ;
   dcat:theme <#Waterfalls> .
-<#img-0451>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Keila juga" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Keila_juga> ;
-  dcat:theme <#Waterfalls> .
 <#img-0452>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Oshinkoshin Falls" ;
@@ -3801,11 +3560,6 @@
   dct:title "Fountains in Patio de los Arrayanes" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Fountains_in_Patio_de_los_Arrayanes> ;
   dcat:theme <#Water_Sculpture_Gardens> .
-<#img-0734>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Fountain of Patio de la Lindaraja" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Fountain_of_Patio_de_la_Lindaraja> ;
-  dcat:theme <#Water_Sculpture_Gardens> .
 <#img-0735>
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Sala de los Mocárabes" ;
@@ -3815,11 +3569,6 @@
   a dcat:Dataset, schema:ImageGallery ;
   dct:title "Parque Zoológico y Jardín Botánico Alberto Durán" ;
   dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Parque_Zool%C3%B3gico_y_Jard%C3%ADn_Bot%C3%A1nico_Alberto_Dur%C3%A1n> ;
-  dcat:theme <#Water_Sculpture_Gardens> .
-<#img-0737>
-  a dcat:Dataset, schema:ImageGallery ;
-  dct:title "Jardines del Alcázar de Sevilla" ;
-  dcat:landingPage <https://commons.wikimedia.org/wiki/Category:Jardines_del_Alc%C3%A1zar_de_Sevilla> ;
   dcat:theme <#Water_Sculpture_Gardens> .
 <#img-0738>
   a dcat:Dataset, schema:ImageGallery ;
