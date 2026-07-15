@@ -9,7 +9,7 @@
     "Menu": "ui:Menu",
     "label": "ui:label",
     "name": "ui:name",
-    "creator": "dct:creator",
+    "publisher": "dct:publisher",
     "subject": "dct:subject",
     "hasPart": {
       "@id": "dct:hasPart",
@@ -42,7 +42,7 @@
   "@type": "Component",
   "label": "Internet Archive player",
   "name": "ia-player",
-  "creator": "Jeff Zucker",
+  "publisher": "Jeff Zucker",
   "hasPart": [
     "./ia3.js",
     "./ia-ui.js",

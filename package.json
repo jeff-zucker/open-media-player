@@ -26,7 +26,8 @@
     "ui-data/",
     "demo/",
     "omp.manifest.json",
-    "index.html"
+    "index.html",
+    "plugins/"
   ],
   "scripts": {
     "build": "node esbuild.config.mjs",
