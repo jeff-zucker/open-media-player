@@ -4,10 +4,9 @@
 
 <>
   a ui:Component ;
-  ui:name "ia-player" ;
   ui:label "Internet Archive player" ;
   ui:icon "🎵" ;
-  ui:module <../dist/ia-player.esm.js> ;
+  schema:url <../dist/ia-player.esm.js> ;
   dct:publisher "Jeff Zucker" ;
   dct:subject "Media" ;
   dct:conformsTo <../shapes/music.shacl> ;

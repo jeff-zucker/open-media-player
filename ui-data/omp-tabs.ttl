@@ -14,7 +14,7 @@
     a ui:Component;
     ui:label "Music";
     ui:icon "🎵";
-    ui:name "ia-player";
+    schema:url <../dist/ia-player.esm.js>;
     rdfs:comment "Browse and play music collections from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
@@ -28,7 +28,7 @@
     a ui:Component;
     ui:label "Spoken Word";
     ui:icon "🎙️";
-    ui:name "ia-player";
+    schema:url <../dist/ia-player.esm.js>;
     rdfs:comment "Browse and play poetry, audiobooks, and talks from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
@@ -42,7 +42,7 @@
     a ui:Component;
     ui:label "Movies";
     ui:icon "🎬";
-    ui:name "ia-player";
+    schema:url <../dist/ia-player.esm.js>;
     rdfs:comment "Browse and play films from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
@@ -57,7 +57,7 @@
     a ui:Component;
     ui:label "Images";
     ui:icon "🖼";
-    ui:name "omp-images";
+    schema:url <../dist/omp-images.esm.js>;
     rdfs:comment "Browse Wikimedia image galleries.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
