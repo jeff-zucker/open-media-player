@@ -8,7 +8,8 @@
     a ui:Menu;
     ui:label "Open Media Player";
     ui:orientation ui:Horizontal;
-    ui:parts ( :Music :Spoken-Word :Movies :Images ).
+    schema:itemListOrder schema:ItemListOrderAscending;
+    schema:itemListElement :Tabs-Music, :Tabs-Spoken-Word, :Tabs-Movies, :Tabs-Images.
 
 :Music
     a ui:Component;
@@ -64,3 +65,8 @@
     ui:attribute
         [ schema:name "id"; schema:value "panel-images" ],
         [ schema:name "source"; schema:value "./libraries/wikimedia_images/images.ttl#Images" ].
+
+:Tabs-Music a schema:ListItem; schema:item :Music; schema:position 1.
+:Tabs-Spoken-Word a schema:ListItem; schema:item :Spoken-Word; schema:position 2.
+:Tabs-Movies a schema:ListItem; schema:item :Movies; schema:position 3.
+:Tabs-Images a schema:ListItem; schema:item :Images; schema:position 4.
