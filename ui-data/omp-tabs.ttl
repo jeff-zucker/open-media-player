@@ -8,7 +8,6 @@
     a ui:Menu;
     ui:label "Open Media Player";
     ui:orientation ui:Horizontal;
-    schema:itemListOrder schema:ItemListOrderAscending;
     schema:itemListElement :Tabs-Music, :Tabs-Spoken-Word, :Tabs-Movies, :Tabs-Images.
 
 :Music
@@ -19,7 +18,7 @@
     rdfs:comment "Browse and play music collections from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
-    ui:attribute
+    schema:additionalProperty
         [ schema:name "id"; schema:value "panel-music" ],
         [ schema:name "storage-ns"; schema:value "music" ],
         [ schema:name "defer"; schema:value "" ],
@@ -33,7 +32,7 @@
     rdfs:comment "Browse and play poetry, audiobooks, and talks from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
-    ui:attribute
+    schema:additionalProperty
         [ schema:name "id"; schema:value "panel-spoken-word" ],
         [ schema:name "storage-ns"; schema:value "spoken-word" ],
         [ schema:name "defer"; schema:value "" ],
@@ -47,7 +46,7 @@
     rdfs:comment "Browse and play films from the Internet Archive.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
-    ui:attribute
+    schema:additionalProperty
         [ schema:name "id"; schema:value "panel-movies" ],
         [ schema:name "storage-ns"; schema:value "movies" ],
         [ schema:name "favourites-only"; schema:value "" ],
@@ -62,7 +61,7 @@
     rdfs:comment "Browse Wikimedia image galleries.";
     dct:creator "Jeff Zucker";
     dct:subject "Media";
-    ui:attribute
+    schema:additionalProperty
         [ schema:name "id"; schema:value "panel-images" ],
         [ schema:name "source"; schema:value "./libraries/wikimedia_images/images.ttl#Images" ].
 

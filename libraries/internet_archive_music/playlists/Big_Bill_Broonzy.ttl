@@ -8,7 +8,6 @@
     a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;
     dct:title "Big Bill Broonzy" ;
     dct:isPartOf <../playlists.ttl#it> ;
-    schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     oa:styleClass "hidden" ;
     schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07> .

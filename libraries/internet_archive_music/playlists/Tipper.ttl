@@ -8,7 +8,6 @@
     a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;
     dct:title "Tipper" ;
     dct:isPartOf <../playlists.ttl#it> ;
-    schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     oa:styleClass "hidden" ;
     schema:itemListElement <#e01> .

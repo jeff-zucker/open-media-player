@@ -109,8 +109,8 @@ shape :ReleaseShape -> mo:Release {
 # Playlist — a curated track list: schema:ItemList (the ordered
 # collection) + schema:MusicPlaylist (the playlist facet) + dcat:Dataset
 # (catalog membership — what the loader spine follows). Membership is
-# the ordered schema:itemListElement → schema:ListItem sequence;
-# schema:itemListOrder fixes ascending-by-position. dcterms:isPartOf →
+# the ordered schema:itemListElement → schema:ListItem sequence
+# (positions ascending). dcterms:isPartOf →
 # the playlists sub-catalog is the structural spine. foaf:maker here is
 # a literal curator NAME, not an Agent IRI. oa:styleClass "hidden"
 # marks a converted-to-artist playlist shown only as its linked artist.
@@ -119,7 +119,6 @@ shape :PlaylistShape -> schema:MusicPlaylist {
   rdf:type [ sh:hasValue dcat:Dataset ] ;
   dcterms:title xsd:string [1..1] ;
   dcterms:isPartOf @:CatalogShape [1..1] ;
-  schema:itemListOrder [ sh:hasValue schema:ItemListOrderAscending ] ;
   foaf:maker xsd:string [0..1] ;
   dcterms:description xsd:string [0..1] ;
   oa:styleClass xsd:string [0..1] ;

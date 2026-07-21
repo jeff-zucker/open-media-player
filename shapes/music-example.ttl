@@ -66,7 +66,6 @@
     dcterms:title "JZ's Dance Mix" ;
     dcterms:isPartOf <#library> ;
     foaf:maker "jeffz" ;
-    schema:itemListOrder schema:ItemListOrderAscending ;
     schema:itemListElement <#e01>, <#e02> .
 
 <#e01> a schema:ListItem ;

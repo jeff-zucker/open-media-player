@@ -73,7 +73,6 @@
     sh:property [ sh:path rdf:type ; sh:hasValue dcat:Dataset ] ;
     sh:property [ sh:path dcterms:title ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ] ;
     sh:property [ sh:path dcterms:isPartOf ; sh:node :CatalogShape ; sh:minCount 1 ; sh:maxCount 1 ] ;
-    sh:property [ sh:path schema:itemListOrder ; sh:hasValue schema:ItemListOrderAscending ] ;
     sh:property [ sh:path foaf:maker ; sh:datatype xsd:string ; sh:maxCount 1 ] ;
     sh:property [ sh:path dcterms:description ; sh:datatype xsd:string ; sh:maxCount 1 ] ;
     sh:property [ sh:path oa:styleClass ; sh:datatype xsd:string ; sh:maxCount 1 ] ;

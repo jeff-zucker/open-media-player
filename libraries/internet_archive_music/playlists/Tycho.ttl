@@ -8,7 +8,6 @@
     a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;
     dct:title "Tycho" ;
     dct:isPartOf <../playlists.ttl#it> ;
-    schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     dct:description "Ambient Electronica" ;
     oa:styleClass "hidden" ;

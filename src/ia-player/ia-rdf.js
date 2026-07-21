@@ -1443,8 +1443,7 @@ export async function addPlaylist(store, baseURI, opts) {
     `<>`,
     `    a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;`,
     `    dct:isPartOf <../playlists.ttl#it> ;`,
-    `    schema:itemListOrder schema:ItemListOrderAscending ;`,
-    `    dct:title ${ttlStr(name)}`,
+        `    dct:title ${ttlStr(name)}`,
   ];
   if (maker)       lines.push(`    ; foaf:maker ${ttlStr(maker)}`);
   if (description) lines.push(`    ; dct:description ${ttlStr(description)}`);
@@ -1482,7 +1481,6 @@ export async function addPlaylist(store, baseURI, opts) {
   store.add(pd, RDF('type'), SCHEMA('ItemList'), pd);
   store.add(pd, RDF('type'), PLAYLIST, pd);
   store.add(pd, RDF('type'), DCAT('Dataset'), pd);
-  store.add(pd, SCHEMA('itemListOrder'), SCHEMA('ItemListOrderAscending'), pd);
   store.add(pd, DCT('isPartOf'), docs.playlistsCatalog, pd);
   store.add(pd, DCT('title'), literal(name), pd);
   if (maker) store.add(pd, FOAF('maker'), literal(maker), pd);
@@ -1524,8 +1522,7 @@ export async function ensureDeletedBin(store, baseURI) {
     '<>',
     '    a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;',
     '    dct:isPartOf <../playlists.ttl#it> ;',
-    '    schema:itemListOrder schema:ItemListOrderAscending ;',
-    '    dct:title "Deleted" .',
+        '    dct:title "Deleted" .',
     '',
   ].join('\n');
   const put = await putResource(store, binUrl, body);
@@ -1546,7 +1543,6 @@ export async function ensureDeletedBin(store, baseURI) {
   store.add(bd, RDF('type'), SCHEMA('ItemList'), bd);
   store.add(bd, RDF('type'), PLAYLIST, bd);
   store.add(bd, RDF('type'), DCAT('Dataset'), bd);
-  store.add(bd, SCHEMA('itemListOrder'), SCHEMA('ItemListOrderAscending'), bd);
   store.add(bd, DCT('isPartOf'), docs.playlistsCatalog, bd);
   store.add(bd, DCT('title'), literal('Deleted'), bd);
   return { ok: true, id: binUrl };

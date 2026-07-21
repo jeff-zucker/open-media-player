@@ -8,7 +8,6 @@
     a schema:ItemList, schema:MusicPlaylist, dcat:Dataset ;
     dct:title "Monolake" ;
     dct:isPartOf <../playlists.ttl#it> ;
-    schema:itemListOrder schema:ItemListOrderAscending ;
     foaf:maker "jeffz" ;
     dct:description "Berlin Techno Ambient" ;
     schema:itemListElement <#e01>, <#e02>, <#e03>, <#e04>, <#e05>, <#e06>, <#e07>, <#e08>, <#e09>, <#e10> .
