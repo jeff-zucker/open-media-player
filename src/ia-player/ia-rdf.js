@@ -191,7 +191,7 @@ function spineCacheInvalidate(...urls) {
 
 // `shared:true` (a Solid/pod library) loads into the shared `rdf`
 // singleton store using its Fetcher — the one sol-login's
-// _integrateWithRdflib() patched with the Inrupt authenticated fetch,
+// _integrateWithRdflib() patched with the Solid-OIDC authenticated fetch,
 // so authed GET/PATCH/PUT/DELETE happen automatically. Non-shared
 // (local/dev) libraries keep their own private store + Fetcher
 // (multi-library aggregation unchanged) — plan store model A.
@@ -768,7 +768,7 @@ export function parsePlaylists(store, baseURI) {
 // same-origin/dev library AND the pod library both live in rdf.store,
 // so store identity can no longer tell "authed pod write" (needs the
 // sparql-update bypass — UpdateManager.editable() is false over the
-// Inrupt-authenticated Fetcher on CSS) from "local/unauth write"
+// OIDC-authenticated Fetcher on CSS) from "local/unauth write"
 // (UpdateManager works). ia3.js sets this true while a Solid session
 // is active, false otherwise. Default false → dev/local & logged-out
 // take the UpdateManager path (today's working behaviour); only an
@@ -892,7 +892,7 @@ async function runUpdate(store, _baseURI, deletes, inserts) {
   inserts = inserts || [];
 
   // Authed pod write: rdflib's UpdateManager.editable() gate returns
-  // false over the Inrupt-authenticated Fetcher on CSS ("Can't make
+  // false over the OIDC-authenticated Fetcher on CSS ("Can't make
   // changes in uneditable …") even though CSS *does* accept the PATCH.
   // So bypass UpdateManager: send the sparql-update PATCH ourselves via
   // the (authed) Fetcher — the same mechanism putResource/podPatchInsert

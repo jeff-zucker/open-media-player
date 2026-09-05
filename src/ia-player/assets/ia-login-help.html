@@ -134,11 +134,12 @@ in place.</p>
     Server (CSS). NSS / ESS should work to the extent they support
     standard LDP <code>PUT</code> and <code>application/sparql-update</code>
     <code>PATCH</code>; anything refused degrades gracefully.</td></tr>
-  <tr><td>Auth library</td><td>The page must provide
-    <code>@inrupt/solid-client-authn-browser</code> as a global. The
-    bundled dev page (<code>index.html</code>) loads it; a host embedding
-    <code>&lt;ia-player&gt;</code> supplies its own. Without it the
-    button still shows; only an actual login errors.</td></tr>
+  <tr><td>Auth library</td><td>Sign-in is handled by
+    <code>&lt;sol-login&gt;</code>, which loads its Solid-OIDC client through
+    the page&rsquo;s import map (sol-components&rsquo; vendored build). The
+    bundled dev page (<code>index.html</code>) and any host embedding
+    <code>&lt;ia-player&gt;</code> get it that way. Without it the button
+    still shows; only an actual login errors.</td></tr>
   <tr><td>Public read</td><td>To see the library logged out, grant the
     <code>open-media-player/</code> container public Read in your
     pod&rsquo;s access controls.</td></tr>

@@ -55,7 +55,7 @@ import {
 
 // Snapshot the OIDC redirect params at BUNDLE LOAD — this evaluates
 // when ia-player.js is first parsed, before <sol-login> initialises and
-// solid-client-authn's handleIncomingRedirect strips ?code&state from
+// the Solid-OIDC client's redirect handling strips ?code&state from
 // the URL. By init() time the URL is already clean, so this boot-time
 // capture is the only reliable "this load is a post-login return"
 // signal (used to skip the wasted unauthenticated same-origin load).
@@ -407,7 +407,7 @@ function createPlayer({ libraryConfigs, libs, host }) {
   function libById(id) { return libs.find(l => l.config.id === id) || null; }
 
   // Swap the pod library in place — NEVER via host.reload(), which would
-  // rebuild <sol-login> with a fresh AuthManager and drop the Inrupt
+  // rebuild <sol-login> with a fresh AuthManager and drop the OIDC
   // session (→ unauthenticated pod fetch → empty library). Logged in →
   // pod only: local libraries are disabled (not deleted) and restored
   // on logout (plan decision 3).
@@ -3090,12 +3090,12 @@ function createPlayer({ libraryConfigs, libs, host }) {
   // ---- Solid login -----------------------------------------------------
   // <sol-login> is bundled from source so it shares the player's single
   // rdflib + the one `rdf` singleton; its _integrateWithRdflib() (run on
-  // init/login/logout) patches that shared fetcher with the Inrupt
+  // init/login/logout) patches that shared fetcher with the Solid-OIDC
   // authenticated fetch. The player mounts after DOMContentLoaded, so
   // sol-login's auto-init never fires for it — we drive initialize()
   // here (also processes the OIDC redirect return). Guarded: with no
-  // @inrupt/solid-client-authn-browser UMD present the button still
-  // shows; only an actual login attempt errors (standalone stays fine).
+  // auth library resolvable the button still shows; only an actual login
+  // attempt errors (standalone stays fine).
   const solLogin = solLoginEl();
   if (solLogin) {
     // ONE-TIME global bootstrap: the single login element (chrome shell or
@@ -4248,7 +4248,7 @@ function loadLibraryConfigs(defaultSrc) {
     if (raw) {
       const parsed = JSON.parse(raw);
       // A pod (solid) library is NEVER loaded from persisted config — it
-      // needs the live Inrupt session, which doesn't exist at cold
+      // needs the live OIDC session, which doesn't exist at cold
       // startup (→ 401). It's re-added in-memory after login. Strip any
       // stale solid entry so the app self-heals.
       const clean = Array.isArray(parsed) ? parsed.filter(c => c && !c.solid) : [];
@@ -4363,7 +4363,7 @@ function podLibLast() {
   try { return localStorage.getItem(POD_LIB_LAST) || null; } catch { return null; }
 }
 
-// "Login in flight" marker. solid-client-authn strips ?code&state from
+// "Login in flight" marker. the Solid-OIDC client strips ?code&state from
 // the URL during handleIncomingRedirect BEFORE init() runs, so the URL
 // is an unreliable "are we mid-login" signal. Instead we set this when
 // a Solid login is initiated (it survives the OIDC redirect in
